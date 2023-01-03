@@ -1,12 +1,14 @@
 package ss3_array.baitap;
+
 import java.util.*;
-public class them_phan_tu_vao_mang {
+
+public class AddElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập số phần tử của mảng: ");
-        int n = scanner.nextInt();
+        int n = Integer.parseInt(scanner.nextLine());
 
-        int [] arr = new int [n];
+        int[] arr = new int[n];
         System.out.print("Nhập các phần tử của mảng: \n");
         for (int i = 0; i < n; i++) {
             System.out.printf("a[%d] = ", i);
@@ -24,9 +26,9 @@ public class them_phan_tu_vao_mang {
     }
 
 
-    public static void sortASC(int [] arr) {
+    public static void sortASC(int[] arr) {
         int temp = arr[0];
-        for (int i = 0 ; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
                     temp = arr[j];
@@ -38,10 +40,10 @@ public class them_phan_tu_vao_mang {
     }
 
 
-    public static int [] insert(int [] arr, int k) {
+    public static int[] insert(int[] arr, int k) {
         int arrIndex = arr.length - 1;
         int tempIndex = arr.length;
-        int [] tempArr = new int [tempIndex + 1];
+        int[] tempArr = new int[tempIndex + 1];
         boolean inserted = false;
 
         for (int i = tempIndex; i >= 0; i--) {
@@ -59,7 +61,7 @@ public class them_phan_tu_vao_mang {
         return tempArr;
     }
 
-    public static void show(int [] arr) {
+    public static void show(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }

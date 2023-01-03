@@ -1,19 +1,21 @@
 package ss2.baitap;
+
 import java.util.Scanner;
-public class hien_thi_cac_hinh {
-    public static void main(String[] args){
+
+public class Geometries {
+    public static void main(String[] args) {
         int height;
         int width;
         Scanner sc = new Scanner(System.in);
 
         System.out.print("height = ");
-        height = sc.nextInt();
+        height = Integer.parseInt(sc.nextLine());
         System.out.print("width = ");
-        width = sc.nextInt();
+        width = Integer.parseInt(sc.nextLine());
         System.out.println("Hình chữ nhật");
 
-        for(int i = 1; i <= height; i++){
-            for(int j = 1; j <= width; j++) {
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= width; j++) {
                 System.out.print("* ");
             }
             System.out.println(" ");
@@ -21,16 +23,16 @@ public class hien_thi_cac_hinh {
 
         sc.close();
         System.out.println("Hình tam giác");
-        for (int i = 1; i <= height; i++){
-            for (int j = 1; j <= i; j++){
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println(" ");
         }
         sc.close();
         System.out.println("Hình tam giác ngược");
-        for (int i = height; i >= 1; i--){
-            for (int j = 1; j <= i; j++){
+        for (int i = height; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println(" ");

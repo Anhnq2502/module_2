@@ -2,7 +2,7 @@ package ss1_introduction_java.baitap;
 
 import java.util.Scanner;
 
-public class so_thanh_chu {
+public class NumberToText {
     public static void main(String[] args) {
         System.out.println("Input Number ");
         Scanner scanner = new Scanner(System.in);
