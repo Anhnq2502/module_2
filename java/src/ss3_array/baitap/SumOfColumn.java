@@ -1,11 +1,13 @@
 package ss3_array.baitap;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class MaxElement {
+public class SumOfColumn {
     public static void main(String[] args) {
         int m;
         int n;
+        int k;
+        int sum = 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -13,6 +15,8 @@ public class MaxElement {
         m = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập vào số cột của ma trận: ");
         n = Integer.parseInt(scanner.nextLine());
+        System.out.println("Nhập cột cần tính tổng: ");
+        k = Integer.parseInt(scanner.nextLine());
 
         int[][] array = new int[m][n];
 
@@ -20,20 +24,18 @@ public class MaxElement {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print("array[" + i + "][" + j + "] = ");
-                array[i][j] = Integer.parseInt(scanner.nextLine());
+                array[i][j] = scanner.nextInt();
             }
         }
 
-        int max = array[0][0];
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (max < array[i][j]) {
-                    max = array[i][j];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (j == k) {
+                    sum += array[i][j];
                 }
             }
         }
-
-        System.out.println("Phần tử lớn nhất trong ma trận = " + max);
+        System.out.println("Tổng của cột đó là: " + sum);
     }
 }
+
