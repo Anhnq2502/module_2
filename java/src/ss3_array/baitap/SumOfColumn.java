@@ -1,41 +1,39 @@
 package ss3_array.baitap;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class SumOfColumn {
     public static void main(String[] args) {
-        int m;
-        int n;
-        int k;
-        int sum = 0;
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Nhập vào số dòng của ma trận: ");
-        m = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập vào số cột của ma trận: ");
-        n = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập cột cần tính tổng: ");
-        k = Integer.parseInt(scanner.nextLine());
-
-        int[][] array = new int[m][n];
-
-        System.out.println("Nhập các phần tử cho ma trận: ");
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print("array[" + i + "][" + j + "] = ");
-                array[i][j] = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập số hàng của mảng 2 chiều = ");
+        int rowLengthArr = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập số cột của mảng 2 chiều = ");
+        int colLengthArr = Integer.parseInt(sc.nextLine());
+        int[][] arr;
+        arr = new int[rowLengthArr][colLengthArr];
+        for (int i = 0; i < rowLengthArr; i++) {
+            for (int j = 0; j < colLengthArr; j++) {
+                System.out.println("Nhập phần tử thứ " + (j + 1) + " của hàng thứ " + (i + 1));
+                arr[i][j] = sc.nextInt();
             }
         }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (j == k) {
-                    sum += array[i][j];
-                }
-            }
+        for (int i = 0; i < rowLengthArr; i++) {
+            System.out.print("Row " + (i + 1));
+            System.out.println(Arrays.toString(arr[i]));
         }
-        System.out.println("Tổng của cột đó là: " + sum);
+        System.out.println("Bạn muốn tính tổng của cột nào ? ");
+        int colOfUserInput = Integer.parseInt(sc.nextLine());
+        int totalElmInCol = 0;
+        if (colOfUserInput > 0 && colOfUserInput <= colLengthArr) {
+            for (int i = 0; i < rowLengthArr; i++) {
+                totalElmInCol += arr[i][colOfUserInput - 1];
+            }
+            System.out.println("Tổng " + colOfUserInput + " là: " + totalElmInCol);
+        } else {
+            System.out.println("Cột này không có.");
+        }
     }
 }
+
 
