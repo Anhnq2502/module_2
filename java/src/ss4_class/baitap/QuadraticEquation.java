@@ -24,6 +24,7 @@ public class QuadraticEquation {
     double getRoot2() {
         return (-this.b - Math.sqrt(this.getDiscriminant())) / (2 * a);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("a = ");
@@ -36,12 +37,10 @@ public class QuadraticEquation {
         double delta = quadraticEquation.getDiscriminant();
         if (delta < 0) {
             System.out.println("Phương trình vô nghiệm");
-        }
-        else if (delta == 0) {
+        } else if (delta == 0) {
             System.out.println("Phương trình có 1 nghiệm = " + quadraticEquation.getRoot1());
-        }
-        else {
-            System.out.println("Phương trình có 2 nghiệm "+quadraticEquation.getRoot1()+" và "+quadraticEquation.getRoot2());
+        } else {
+            System.out.println("Phương trình có 2 nghiệm " + quadraticEquation.getRoot1() + " và " + quadraticEquation.getRoot2());
         }
     }
 }
