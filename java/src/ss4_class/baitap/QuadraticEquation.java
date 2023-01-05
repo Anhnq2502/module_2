@@ -3,48 +3,45 @@ package ss4_class.baitap;
 import java.util.Scanner;
 
 public class QuadraticEquation {
-    private static Scanner scanner = new Scanner(System.in);
+    private final double a;
+    private final double b;
+    private final double c;
 
+    public QuadraticEquation(double x1, double x2, double x3) {
+        this.a = x1;
+        this.b = x2;
+        this.c = x3;
+    }
+
+    double getDiscriminant() {
+        return Math.pow(this.b, 2) - 4 * this.a * this.c;
+    }
+
+    double getRoot1() {
+        return (-this.b + Math.sqrt(this.getDiscriminant())) / (2 * a);
+    }
+
+    double getRoot2() {
+        return (-this.b - Math.sqrt(this.getDiscriminant())) / (2 * a);
+    }
     public static void main(String[] args) {
-        System.out.print("Nhập hệ số bậc 2, a = ");
-        float a = QuadraticEquation.scanner.nextFloat();
-        System.out.print("Nhập hệ số bậc 1, b = ");
-        float b = QuadraticEquation.scanner.nextFloat();
-        System.out.print("Nhập hằng số tự do, c = ");
-        float c = scanner.nextFloat();
-        QuadraticEquation.CalculateQuadraticEquation(a, b, c);
-    }
-
-
-    public static void CalculateQuadraticEquation(float a, float b, float c) {
-        if (a == 0) {
-            if (b == 0) {
-                System.out.println("Phương trình vô nghiệm!");
-            } else {
-                System.out.println("Phương trình có một nghiệm: "
-                        + "x = " + (-c / b));
-            }
-            return;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("a = ");
+        double x1 = sc.nextDouble();
+        System.out.print("b = ");
+        double x2 = sc.nextDouble();
+        System.out.print("c = ");
+        double x3 = sc.nextDouble();
+        QuadraticEquation quadraticEquation = new QuadraticEquation(x1, x2, x3);
+        double delta = quadraticEquation.getDiscriminant();
+        if (delta < 0) {
+            System.out.println("Phương trình vô nghiệm");
         }
-        float delta = b * b - 4 * a * c;
-        float x1;
-        float x2;
-
-        if (delta > 0) {
-            x1 = (float) ((-b + Math.sqrt(delta)) / (2 * a));
-            x2 = (float) ((-b - Math.sqrt(delta)) / (2 * a));
-            System.out.println("Phương trình có 2 nghiệm là: "
-                    + "x1 = " + x1 + " và x2 = " + x2);
-        } else if (delta == 0) {
-            x1 = (-b / (2 * a));
-            System.out.println("Phương trình có nghiệm kép: "
-                    + "x1 = x2 = " + x1);
-        } else {
-            System.out.println("Phương trình vô nghiệm!");
+        else if (delta == 0) {
+            System.out.println("Phương trình có 1 nghiệm = " + quadraticEquation.getRoot1());
         }
-    }
-
-    public static void setScanner(Scanner scanner) {
-        QuadraticEquation.scanner = scanner;
+        else {
+            System.out.println("Phương trình có 2 nghiệm "+quadraticEquation.getRoot1()+" và "+quadraticEquation.getRoot2());
+        }
     }
 }
