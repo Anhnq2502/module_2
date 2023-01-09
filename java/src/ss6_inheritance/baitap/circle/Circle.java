@@ -1,38 +1,50 @@
 package ss6_inheritance.baitap.circle;
 
 public class Circle {
-    private static double radius;
-    private static String color;
+    private double radius = 1;
+    private String color = "red";
 
-    public Circle(double radius, String color) {
-        Circle.radius = radius;
-        Circle.color = color;
+    public Circle() {
+
     }
 
-    public static double getRadius() {
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
+    }
+
+    public double getRadius() {
         return radius;
     }
 
-    public static void setRadius(double radius) {
-        Circle.radius = radius;
-    }
-
-    public static String getColor() {
+    public String getColor() {
         return color;
     }
 
-    public static void setColor(String color) {
-        Circle.color = color;
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public double getArea() {
         return this.radius * this.radius * Math.PI;
     }
 
+    public double getPerimeter() {
+        return this.radius * 2 * Math.PI;
+    }
+
+    @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
+        return "A radius is "
+                + getRadius()
+                + " a color is "
+                + getColor()
+                + " area is "
+                + getArea()
+                + " perimeter is " + getPerimeter();
     }
 }

@@ -1,36 +1,51 @@
 package ss6_inheritance.baitap.pointMove;
 
+import java.util.Arrays;
+
 public class Point {
-    private float x;
-    private float y;
+    private float x = 0.0f;
+    private float y = 0.0f;
+
+    public Point() {
+
+    }
 
     public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point() {
-        this.x = 0.0f;
-        this.y = 0.0f;
-    }
-
     public float getX() {
         return this.x;
     }
 
-    public void setX(float x) {
-        this.x = x;
+    public void setX(float newX) {
+        this.x = newX;
     }
 
     public float getY() {
         return this.y;
     }
 
-    public void setY(float y) {
-        this.y = y;
+    public void setY(float newY) {
+        this.y = newY;
+    }
+
+    public float[] getXY() {
+        return new float[]{x, y};
+    }
+
+    public void setXY(float newX, float newY) {
+        this.x = newX;
+        this.y = newY;
     }
 
     public String toString() {
-        return "(" + this.x + "," + this.y + ")";
+        return " x = "
+                + getX()
+                + " y = "
+                + getY()
+                + " and coordinate is "
+                + Arrays.toString(getXY());
     }
 }
