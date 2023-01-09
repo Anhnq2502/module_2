@@ -9,7 +9,7 @@ public class TestTriangle {
         Triangle triagle = getTriagle();
         System.out.print("nhập màu: ");
         triagle.setColor(sc.nextLine());
-        System.out.print("có muốn fill không Y/N: ");
+        System.out.print("có muốn sửa không Y/N: ");
         String option = sc.nextLine();
         switch (option) {
             case "y":
