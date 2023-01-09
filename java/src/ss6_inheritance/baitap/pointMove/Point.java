@@ -1,4 +1,4 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.pointMove;
 
 public class Point {
     private float x;
@@ -8,7 +8,8 @@ public class Point {
         this.x = x;
         this.y = y;
     }
-    public Point(){
+
+    public Point() {
         this.x = 0.0f;
         this.y = 0.0f;
     }
@@ -28,7 +29,8 @@ public class Point {
     public void setY(float y) {
         this.y = y;
     }
-    public String toString(){
+
+    public String toString() {
         return "(" + this.x + "," + this.y + ")";
     }
 }

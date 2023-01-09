@@ -1,8 +1,8 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.pointMove;
 
 public class Move {
     public static void main(String[] args) {
-        Point p1 = new Point(1,2);
+        Point p1 = new Point(1, 2);
         System.out.println(p1);
         Point p2 = new Point();
         System.out.println(p2);
@@ -13,7 +13,7 @@ public class Move {
         System.out.println(p1.getX());
         System.out.println(p2.getY());
 
-        MovablePoint movablePoint = new MovablePoint(11,12);
+        MovablePoint movablePoint = new MovablePoint(11, 12);
         System.out.println(movablePoint);
         movablePoint.setxSpeed(21);
         movablePoint.setySpeed(22);

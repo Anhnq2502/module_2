@@ -1,4 +1,4 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.point2D3D;
 
 public class TestPoint2DPoint3D {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class TestPoint2DPoint3D {
         System.out.println("X là: " + p2a.getX());
         System.out.println("Y là: " + p2b.getY());
 
-        Point3D p3a = new Point3D(11,12,13);
+        Point3D p3a = new Point3D(11, 12, 13);
         System.out.println(p3a);
         Point2D p3b = new Point3D();
         System.out.println(p3b);

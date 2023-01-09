@@ -1,8 +1,9 @@
-package ss6_inheritance.baitap;
+package ss7_abstract.baitap.resizeable;
 
-public class Shape {
+public abstract class Shape extends Resizeable {
     private String color = "green";
     private boolean filled = true;
+
 
     public Shape() {
     }
@@ -36,6 +37,12 @@ public class Shape {
                 + (isFilled() ? "filled" : "not filled");
     }
 
-    public static void dost() {
+    public static void printShape(Shape[] shape) {
+        for (Shape x : shape) {
+            System.out.println(x.toString());
+        }
     }
+
+    public abstract void resize(double percent);
 }
+

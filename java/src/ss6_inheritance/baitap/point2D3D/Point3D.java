@@ -1,12 +1,14 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.point2D3D;
 
 public class Point3D extends Point2D {
     private float z;
-    public Point3D(float x, float y, float z){
-        super(x,y);
+
+    public Point3D(float x, float y, float z) {
+        super(x, y);
         this.z = z;
     }
-    public Point3D(){
+
+    public Point3D() {
         super();
         this.z = 0.0f;
     }
@@ -18,7 +20,8 @@ public class Point3D extends Point2D {
     public void setZ(float z) {
         this.z = z;
     }
-    public String toString(){
+
+    public String toString() {
         return "(" + super.getX() + "," + super.getY() + "," + this.z + ")";
     }
 }

@@ -1,4 +1,4 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.triangle;
 
 public class Triangle {
     private double side1;

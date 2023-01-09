@@ -1,9 +1,10 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.point2D3D;
 
 public class Point2D {
-    private  float x ;
-    private  float y ;
-    public Point2D(float x, float y){
+    private float x;
+    private float y;
+
+    public Point2D(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -28,7 +29,8 @@ public class Point2D {
     public void setY(float y) {
         this.y = y;
     }
-        public String toSting(){
+
+    public String toSting() {
         return "(" + this.x + "," + this.y + ")";
     }
 

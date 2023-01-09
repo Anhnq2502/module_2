@@ -1,4 +1,4 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.circle;
 
 public class Cylinder extends Circle {
     private double height;

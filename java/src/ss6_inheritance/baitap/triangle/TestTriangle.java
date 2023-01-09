@@ -1,6 +1,9 @@
-package ss6_inheritance.baitap;
+package ss6_inheritance.baitap.triangle;
+
 import java.util.*;
-public class TestTriangle {private static Scanner sc = new Scanner(System.in);
+
+public class TestTriangle {
+    private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Triangle triagle = getTriagle();
@@ -16,7 +19,7 @@ public class TestTriangle {private static Scanner sc = new Scanner(System.in);
                 triagle.setFilled(false);
                 break;
         }
-        System.out.println("\n \n" + triagle.toString());
+        System.out.println("\n \n" + triagle);
 
     }
 
