@@ -1,6 +1,6 @@
 package ss7_abstract.baitap.resizeable;
 
-public class Test {
+public class TestResizeable {
     public static void main(String[] args) {
         int x = (int) Math.floor(Math.random() * 10);
         Shape[] shapes = new Shape[3];

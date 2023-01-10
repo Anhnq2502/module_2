@@ -42,7 +42,7 @@ public class Circle extends Shape implements Colorable {
 
     @Override
     public void howToColor() {
-        System.out.println("hình tròn: tô hết vòn tròn");
+        System.out.println("hình tròn: tô hết vòng tròn");
     }
 }
 

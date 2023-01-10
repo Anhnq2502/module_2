@@ -1,6 +1,6 @@
 package ss7_abstract.baitap.colorable;
 
-public class Test {
+public class TestColorable {
     public static void main(String[] args) {
         Shape[] shape = new Shape[10];
         for (int i = 0; i < 10; i++) {
