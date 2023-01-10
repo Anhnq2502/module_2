@@ -1,7 +1,6 @@
-package ss7_abstract.baitap.resizeable;
+package ss7_abstract.baitap.colorable;
 
-
-public class Circle extends Shape {
+public class Circle extends Shape implements Colorable {
     private double radius = 1.0;
 
     public Circle() {
@@ -12,7 +11,7 @@ public class Circle extends Shape {
     }
 
     public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
+        setShape(color, filled);
         this.radius = radius;
     }
 
@@ -37,13 +36,13 @@ public class Circle extends Shape {
         return "A Circle with radius="
                 + getRadius()
                 + ", which is a subclass of "
-                + super.toString()
-                + ", Area=" +
-                +getArea();
+                + super.toString();
     }
 
+
     @Override
-    public void resize(double percent) {
-        this.radius *= (percent / 200);
+    public void howToColor() {
+        System.out.println("hình tròn: tô hết vòn tròn");
     }
 }
+
