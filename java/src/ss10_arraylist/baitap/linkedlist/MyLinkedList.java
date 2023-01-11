@@ -5,20 +5,23 @@ public class MyLinkedList extends Node {
     private Node head;
     private int numNodes = 0;
 
-    public MyLinkedList(Object data){
+    public MyLinkedList(Object data) {
         super(data);
         head = new Node(data);
     }
-    public void Node(Object data){
+
+    public void Node(Object data) {
         this.data = data;
     }
-    public Object getData(){
+
+    public Object getData() {
         return this.data;
     }
-    public void add(int index, Object data){
+
+    public void add(int index, Object data) {
         Node temp = head;
         Node holder;
-        for (int i = 0; i < index-1 && temp.next != null; i++){
+        for (int i = 0; i < index - 1 && temp.next != null; i++) {
             temp = temp.next;
         }
         holder = temp.next;
@@ -26,22 +29,25 @@ public class MyLinkedList extends Node {
         temp.next.next = holder;
         numNodes++;
     }
-    public void addFirst(Object data){
+
+    public void addFirst(Object data) {
         Node temp = head;
         head = new Node(data);
         head.next = temp;
         numNodes++;
     }
-    public Node get(int index){
+
+    public Node get(int index) {
         Node temp = head;
-        for (int i = 0; i < index; i++){
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
         return temp;
     }
-    public void printList(){
+
+    public void printList() {
         Node temp = head;
-        while (temp !=null){
+        while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }

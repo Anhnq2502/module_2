@@ -1,4 +1,5 @@
 package ss10_arraylist.baitap.arraylist;
+
 import java.util.Arrays;
 
 public class MyArrayList<E> {
@@ -14,7 +15,7 @@ public class MyArrayList<E> {
     public MyArrayList() {
     }
 
-    public  void MyList() {
+    public void MyList() {
         data = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
@@ -29,7 +30,7 @@ public class MyArrayList<E> {
         }
     }
 
-    public void add( E e) {
+    public void add(E e) {
         size += 1;
         ensureCapa();
         data[size - 1] = e;

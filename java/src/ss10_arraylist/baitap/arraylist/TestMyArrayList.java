@@ -12,7 +12,7 @@ public class TestMyArrayList {
         System.out.println(list.indexOf("không"));
         System.out.println(list.indexOf("có"));
         list.remove(1);
-        list.add("rất",1);
+        list.add("rất", 1);
         print(list.getData());
         MyArrayList<String> clone = list.clone();
         System.out.println(clone.contains("anh"));
