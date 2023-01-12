@@ -1,4 +1,4 @@
-package ss10_arraylist.thuchanh;
+package ss10_dsa_list.thuchanh;
 
 public class TestMyLinkedList {
     public static void main(String[] args) {

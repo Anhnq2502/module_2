@@ -1,4 +1,4 @@
-package ss10_arraylist.baitap.linkedlist;
+package ss10_dsa_list.baitap.linkedlist;
 
 public class Node {
     public Node next;

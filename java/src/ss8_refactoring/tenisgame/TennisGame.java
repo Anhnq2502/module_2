@@ -25,13 +25,15 @@ public class TennisGame {
             }
         } else if (scoreOfFirstPlayer >= 4 || scoreOfSecondPlayer >= 4) {
             int minusResult = scoreOfFirstPlayer - scoreOfSecondPlayer;
-            if (minusResult == 1) finalResult = "Advantage player1";
-            else if (minusResult == -1) finalResult = "Advantage player2";
-            else if (minusResult >= 2) finalResult = "Win for player1";
-            else finalResult = "Win for player2";
+            if (minusResult == 1) {finalResult = "Advantage player1";}
+            else if (minusResult == -1) {finalResult = "Advantage player2";}
+            else if (minusResult >= 2) {finalResult = "Win for player1";}
+            else {
+                finalResult = "Win for player2";
+            }
         } else {
             for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = scoreOfFirstPlayer;
+                if (i == 1) {tempScore = scoreOfFirstPlayer;}
                 else {
                     finalResult += "-";
                     tempScore = scoreOfSecondPlayer;

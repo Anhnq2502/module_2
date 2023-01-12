@@ -1,30 +1,26 @@
-package ss10_arraylist.thuchanh;
+package ss10_dsa_list.baitap.linkedlist;
 
-public class MyLinkedList {
+
+public class MyLinkedList extends Node {
     private Node head;
-    private int numNodes;
+    private int numNodes = 0;
 
     public MyLinkedList(Object data) {
+        super(data);
         head = new Node(data);
     }
 
-    private static class Node {
-        private Node next;
-        private final Object data;
+    public void Node(Object data) {
+        this.data = data;
+    }
 
-        public Node(Object data) {
-            this.data = data;
-        }
-
-        public Object getData() {
-            return this.data;
-        }
+    public Object getData() {
+        return this.data;
     }
 
     public void add(int index, Object data) {
         Node temp = head;
         Node holder;
-
         for (int i = 0; i < index - 1 && temp.next != null; i++) {
             temp = temp.next;
         }
