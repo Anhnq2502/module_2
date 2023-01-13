@@ -16,7 +16,7 @@ public class CheckBracket {
                 bStack.push(expressionArr[i]);
             }
             if (expressionArr[i].equals(")")) {
-                if (bStack.isEmpty()) {
+                if (bStack.empty()) {
                     flag = false;
                     break;
                 } else {
@@ -24,7 +24,7 @@ public class CheckBracket {
                 }
             }
         }
-        if (flag && bStack.isEmpty()) {
+        if (flag && bStack.empty()) {
             System.out.println("Well");
         } else System.out.println("Not well ");
 
