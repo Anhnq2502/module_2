@@ -1,0 +1,5 @@
+Person{name='Hiệp', gender='NU', dateOfBirth=2001-12-15, position='Tester'}
+Person{name='Trang', gender='NU', dateOfBirth=2001-10-02, position='Manager'}
+Person{name='Hiếu', gender='NAM', dateOfBirth=2001-11-12 position='Developer'}
+Person{name='Huy', gender='NAM', dateOfBirth=2001-07-14, position='Developer'}
+Person{name='Hùng', gender='NAM', dateOfBirth=2001-02-22, position='CEO'}
