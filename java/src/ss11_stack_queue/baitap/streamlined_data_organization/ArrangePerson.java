@@ -16,6 +16,7 @@ public class ArrangePerson {
         listPerson.add(new Person("Hiếu", "NAM", LocalDate.of(2001, 11, 12), "Developer"));
         listPerson.add(new Person("Trang", "NU", LocalDate.of(2001, 10, 02), "Tester"));
         listPerson.add(new Person("Hiệp", "NU", LocalDate.of(2001, 12, 15), "Manager"));
+        listPerson.add(new Person("Na", "NU", LocalDate.of(2001, 3, 26), "Manager"));
         Collections.sort(listPerson, new SortPerson());
         for (Person person : listPerson) {
             if (person.getGender().equals("NU")) {

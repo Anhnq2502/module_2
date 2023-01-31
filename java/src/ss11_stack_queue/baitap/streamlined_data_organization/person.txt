@@ -1,3 +1,4 @@
+Personnel{name='Na', gender='NU', dateOfBirth=2001-03-26, position='Manager'}
 Personnel{name='Trang', gender='NU', dateOfBirth=2001-10-02, position='Tester'}
 Personnel{name='Hiệp', gender='NU', dateOfBirth=2001-12-15, position='Manager'}
 Personnel{name='Hùng', gender='NAM', dateOfBirth=2001-02-22, position='CEO'}
