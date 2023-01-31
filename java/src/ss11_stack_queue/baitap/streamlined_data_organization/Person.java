@@ -1,7 +1,6 @@
 package ss11_stack_queue.baitap.streamlined_data_organization;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Person {
     private String name;

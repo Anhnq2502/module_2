@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ArrangePerson {
     public static void main(String[] args) throws IOException {
-        ArrayList<Person> listPerson = new ArrayList<>(5);
+        ArrayList<Person> listPerson = new ArrayList<>(6);
         Queue<Person> NU = new LinkedList<>();
         Queue<Person> NAM = new LinkedList<>();
 
