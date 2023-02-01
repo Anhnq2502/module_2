@@ -1,55 +1,47 @@
 package ss12_collection_framework.baitap.luyentap.controller;
 
-import ss12_collection_framework.baitap.luyentap.service.ProductMagament;
-import ss12_collection_framework.baitap.luyentap.service.ProductManagement;
+import ss12_collection_framework.baitap.luyentap.service.IProductService;
+import ss12_collection_framework.baitap.luyentap.service.ProductServiceImpl;
 
 import java.util.Scanner;
 
 public class ProductManager {
-    static void menu() {
+    public static void menuProduct() {
+        IProductService iProductService = new ProductServiceImpl();
         Scanner scanner = new Scanner(System.in);
-        ProductMagament productMagament = new ProductManagement();
-        int choose;
         do {
-            System.out.println("Menu \n" +
-                    "1. Thêm sản phẩm \n" +
-                    "2. Sửa thông tin sản phẩm \n" +
+            System.out.println("Quản lý sản phẩm:\n" +
+                    "1. Thêm sản phẩm\n" +
+                    "2. Sửa sản phẩm\n" +
                     "3. Xoá sản phẩm\n" +
-                    "4. Hiển thị danh sách sản phẩm \n" +
-                    "5. Tìm kiếm sản phẩm \n" +
-                    "6. Sắp xếp sản phẩm \n" +
+                    "4. Hiển thị sản phẩm\n" +
+                    "5. Tìm kiếm sản phẩm\n" +
+                    "6. Sắp xếp\n" +
                     "7. Exit");
-            System.out.println("Nhập sự lựa chọn của bạn: ");
-            choose = Integer.parseInt(scanner.nextLine());
-            switch (choose) {
+            System.out.print("Bạn chọn gì: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
                 case 1:
-                    productMagament.add();
+                    iProductService.add();
                     break;
                 case 2:
-                    productMagament.edit();
+                    iProductService.edit();
                     break;
                 case 3:
-                    productMagament.remove();
+                    iProductService.remove();
                     break;
                 case 4:
-                    productMagament.disPlays();
+                    iProductService.display();
                     break;
                 case 5:
-                    productMagament.search();
+                    iProductService.search();
                     break;
                 case 6:
-                    productMagament.sort();
+                    iProductService.sort();
                     break;
                 case 7:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Mời bạn nhập lại ");
+                    System.exit(1);
             }
         } while (true);
-    }
-
-    public static void main(String[] args) {
-        ProductManager.menu();
     }
 }

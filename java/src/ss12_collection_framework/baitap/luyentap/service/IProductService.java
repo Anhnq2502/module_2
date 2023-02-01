@@ -1,15 +1,15 @@
 package ss12_collection_framework.baitap.luyentap.service;
 
-public interface ProductMagament {
+public interface IProductService {
     void add();
-
-    void remove();
-
-    void disPlays();
 
     void edit();
 
-    void sort();
+    void remove();
+
+    void display();
 
     void search();
+
+    void sort();
 }

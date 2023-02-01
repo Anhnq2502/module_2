@@ -1,9 +1,12 @@
-package ss12_collection_framework.baitap.luyentap.service;
+package ss12_collection_framework.baitap.luyentap.model;
 
 public class Product {
-    int id;
-    String name;
-    int price;
+    private int id;
+    private String name;
+    private int price;
+
+    public Product() {
+    }
 
     public Product(int id, String name, int price) {
         this.id = id;
@@ -37,7 +40,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "ProductManagement{" +
+        return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
