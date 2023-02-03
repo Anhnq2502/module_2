@@ -7,7 +7,8 @@ public class TriangleEdgesCheck {
         } else if (a + b <= c || a + c <= b || b + c <= a) {
             throw new IllegalTriangleException("Lỗi: Tam giác không hợp lệ ");
         } else {
-            System.out.println("Tam giác hợp lệ ");
+            System.out.println("Tam giác hợp lệ \n" +
+                    "Kết thúc chương trình");
         }
     }
 }

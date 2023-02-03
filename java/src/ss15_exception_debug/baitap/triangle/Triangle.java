@@ -26,8 +26,6 @@ public class Triangle {
             } catch (Exception e) {
                 System.out.println("Lỗi: Không đúng định dạng ");
                 flag = true;
-            } finally {
-                System.out.println("Kết thúc chương trình");
             }
         } while (flag);
     }
