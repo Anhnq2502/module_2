@@ -8,7 +8,7 @@ public class ByteStream {
 
     public static void writeObjectList(List<Product> productList) {
         FileOutputStream fileOutputStream;
-        ObjectOutputStream objectOutputStream;
+        ObjectOutputStream objectOutputStream = null;
         try {
             fileOutputStream = new FileOutputStream(FILE_PATH);
         } catch (FileNotFoundException e) {
@@ -17,28 +17,24 @@ public class ByteStream {
         try {
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(productList);
-            objectOutputStream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                objectOutputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public static List<Product> readObjectList() {
         FileInputStream fileInputStream;
         ObjectInputStream objectInputStream;
-
-        try {
-            fileInputStream = new FileInputStream(FILE_PATH);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            objectInputStream = new ObjectInputStream(fileInputStream);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         List<Product> productList;
         try {
+            fileInputStream = new FileInputStream(FILE_PATH);
+            objectInputStream = new ObjectInputStream(fileInputStream);
             productList = (List<Product>) objectInputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);

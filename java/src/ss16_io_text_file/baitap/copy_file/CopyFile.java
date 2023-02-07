@@ -16,6 +16,7 @@ public class CopyFile {
             System.out.println("Nhập source file để lưu: ");
             String sourceFileCopy = scanner.nextLine();
             outStream = new FileOutputStream(sourceFileCopy);
+            System.out.println(sourceFileCopy.length());
 
             int length;
             byte[] buffer = new byte[1024];
