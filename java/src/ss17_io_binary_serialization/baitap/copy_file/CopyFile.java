@@ -28,9 +28,9 @@ public class CopyFile {
             e.printStackTrace();
         } finally {
             assert inputStream != null;
+            assert outputStream != null;
             try {
                 inputStream.close();
-                assert outputStream != null;
                 outputStream.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
