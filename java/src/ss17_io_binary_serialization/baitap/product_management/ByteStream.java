@@ -5,7 +5,8 @@ import java.util.List;
 
 public class ByteStream {
     private static final String FILE_PATH = "F:\\CodeGym\\module2\\java\\src\\ss17_io_binary_serialization\\baitap\\product_management\\product.data";
-    public static void writeObjectList(List<Product> productList){
+
+    public static void writeObjectList(List<Product> productList) {
         FileOutputStream fileOutputStream;
         ObjectOutputStream objectOutputStream;
         try {
@@ -21,14 +22,16 @@ public class ByteStream {
             throw new RuntimeException(e);
         }
     }
-    public static List<Product> readObjectList(){
+
+    public static List<Product> readObjectList() {
         FileInputStream fileInputStream;
+        ObjectInputStream objectInputStream;
+
         try {
             fileInputStream = new FileInputStream(FILE_PATH);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        ObjectInputStream objectInputStream;
         try {
             objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {

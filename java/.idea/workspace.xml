@@ -77,7 +77,7 @@
       <recent name="ss7_abstract.baitap.colorable" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ByteStream">
+  <component name="RunManager" selected="Application.ss17_io_binary_serialization.baitap.copy_file.CopyFile">
     <configuration name="ByteStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ss17_io_binary_serialization.baitap.product_management.ByteStream" />
       <module name="ss1_java" />
@@ -124,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ss15_exception_debug.baitap.triangle.Triangle" />
+    <configuration name="ss17_io_binary_serialization.baitap.copy_file.CopyFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ss17_io_binary_serialization.baitap.copy_file.CopyFile" />
       <module name="ss1_java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ss15_exception_debug.baitap.triangle.*" />
+          <option name="PATTERN" value="ss17_io_binary_serialization.baitap.copy_file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ss17_io_binary_serialization.baitap.copy_file.CopyFile" />
+        <item itemvalue="Application.CopyFile" />
         <item itemvalue="Application.ByteStream" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CopyFile" />
         <item itemvalue="Application.ReadFile" />
-        <item itemvalue="Application.Triangle" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +190,7 @@
       <workItem from="1675313267521" duration="6812000" />
       <workItem from="1675393491442" duration="10953000" />
       <workItem from="1675651856989" duration="15330000" />
-      <workItem from="1675737468855" duration="7851000" />
+      <workItem from="1675737468855" duration="11189000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,7 @@ package ss17_io_binary_serialization.baitap.product_management;
 import java.util.Scanner;
 
 public class ProductManagement {
-    public static void menu(){
+    public static void menu() {
         IProductService iProductService = new ProductServicelmpl();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -14,7 +14,7 @@ public class ProductManagement {
                     "4.Exit");
             System.out.println("Bạn chọn gì ?");
             int select = Integer.parseInt(scanner.nextLine());
-            switch (select){
+            switch (select) {
                 case 1:
                     iProductService.add();
                     break;
@@ -27,6 +27,6 @@ public class ProductManagement {
                 case 4:
                     System.exit(1);
             }
-        }while (true);
+        } while (true);
     }
 }
