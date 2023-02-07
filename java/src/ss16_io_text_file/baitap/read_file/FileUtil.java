@@ -42,22 +42,6 @@ public class FileUtil {
 
     public static void writeCSV(Country country) {
         FileWriter fileWriter;
-//        try {
-//            fileWriter = new FileWriter(FILE_PATH, true);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//        try {
-//            bufferedWriter.write(country.getId() + "," + country.getCode() + "," + country.getName() + "\n");
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        try {
-//            bufferedWriter.close();
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
         try {
             fileWriter = new FileWriter(FILE_PATH, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
