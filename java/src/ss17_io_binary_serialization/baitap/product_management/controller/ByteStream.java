@@ -1,4 +1,7 @@
-package ss17_io_binary_serialization.baitap.product_management;
+package ss17_io_binary_serialization.baitap.product_management.controller;
+
+import ss17_io_binary_serialization.baitap.product_management.controller.ProductManagement;
+import ss17_io_binary_serialization.baitap.product_management.model.Product;
 
 import java.io.*;
 import java.util.List;

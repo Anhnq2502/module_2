@@ -1,11 +1,14 @@
-package ss17_io_binary_serialization.baitap.product_management;
+package ss17_io_binary_serialization.baitap.product_management.service;
 
+
+import ss17_io_binary_serialization.baitap.product_management.controller.ByteStream;
+import ss17_io_binary_serialization.baitap.product_management.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProductServicelmpl implements IProductService {
+public class ProductService implements IProductService {
     private static final Scanner scanner = new Scanner(System.in);
     private static final List<Product> productList = new ArrayList<>();
 
