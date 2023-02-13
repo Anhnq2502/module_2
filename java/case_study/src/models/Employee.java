@@ -2,124 +2,50 @@ package models;
 
 import java.time.LocalDate;
 
-public class Employee {
-    private int employeeCode;
-    private String fullNameEmployee;
-    private LocalDate dateOfBirthEmployee;
-    private String genderEmployee;
-    private int identityCardNumberEmployee;
-    private int phoneNumberEmployee;
-    private String emailEmployee;
-    private String literacyEmployee;
-    private String positionEmployee;
-    private int wageEmployee;
+public class Employee extends Person {
 
-    public Employee(int employeeCode, String fullNameEmployee, LocalDate dateOfBirthEmployee, String genderEmployee, int identityCardNumberEmployee, int phoneNumberEmployee, String emailEmployee, String literacyEmployee, String positionEmployee, int wageEmployee) {
-        this.employeeCode = employeeCode;
-        this.fullNameEmployee = fullNameEmployee;
-        this.dateOfBirthEmployee = dateOfBirthEmployee;
-        this.genderEmployee = genderEmployee;
-        this.identityCardNumberEmployee = identityCardNumberEmployee;
-        this.phoneNumberEmployee = phoneNumberEmployee;
-        this.emailEmployee = emailEmployee;
-        this.literacyEmployee = literacyEmployee;
-        this.positionEmployee = positionEmployee;
-        this.wageEmployee = wageEmployee;
+    private String literacy;
+    private String position;
+    private int wage;
+
+
+    public Employee(int code, String fullName, LocalDate dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email, String literacy, String position, int wage) {
+        super(code, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
+        this.literacy = literacy;
+        this.position = position;
+        this.wage = wage;
     }
 
-    public int getEmployeeCode() {
-        return employeeCode;
+    public String getLiteracy() {
+        return literacy;
     }
 
-    public void setEmployeeCode(int employeeCode) {
-        this.employeeCode = employeeCode;
+    public void setLiteracy(String literacy) {
+        this.literacy = literacy;
     }
 
-    public String getFullNameEmployee() {
-        return fullNameEmployee;
+    public String getPosition() {
+        return position;
     }
 
-    public void setFullNameEmployee(String fullNameEmployee) {
-        this.fullNameEmployee = fullNameEmployee;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public LocalDate getDateOfBirthEmployee() {
-        return dateOfBirthEmployee;
+    public int getWage() {
+        return wage;
     }
 
-    public void setDateOfBirthEmployee(LocalDate dateOfBirthEmployee) {
-        this.dateOfBirthEmployee = dateOfBirthEmployee;
-    }
-
-    public String getGenderEmployee() {
-        return genderEmployee;
-    }
-
-    public void setGenderEmployee(String genderEmployee) {
-        this.genderEmployee = genderEmployee;
-    }
-
-    public int getIdentityCardNumberEmployee() {
-        return identityCardNumberEmployee;
-    }
-
-    public void setIdentityCardNumberEmployee(int identityCardNumberEmployee) {
-        this.identityCardNumberEmployee = identityCardNumberEmployee;
-    }
-
-    public int getPhoneNumberEmployee() {
-        return phoneNumberEmployee;
-    }
-
-    public void setPhoneNumberEmployee(int phoneNumberEmployee) {
-        this.phoneNumberEmployee = phoneNumberEmployee;
-    }
-
-    public String getEmailEmployee() {
-        return emailEmployee;
-    }
-
-    public void setEmailEmployee(String emailEmployee) {
-        this.emailEmployee = emailEmployee;
-    }
-
-    public String getLiteracyEmployee() {
-        return literacyEmployee;
-    }
-
-    public void setLiteracyEmployee(String literacyEmployee) {
-        this.literacyEmployee = literacyEmployee;
-    }
-
-    public String getPositionEmployee() {
-        return positionEmployee;
-    }
-
-    public void setPositionEmployee(String positionEmployee) {
-        this.positionEmployee = positionEmployee;
-    }
-
-    public int getWageEmployee() {
-        return wageEmployee;
-    }
-
-    public void setWageEmployee(int wageEmployee) {
-        this.wageEmployee = wageEmployee;
+    public void setWage(int wage) {
+        this.wage = wage;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeCode=" + employeeCode +
-                ", fullNameEmployee='" + fullNameEmployee + '\'' +
-                ", dateOfBirthEmployee=" + dateOfBirthEmployee +
-                ", genderEmployee='" + genderEmployee + '\'' +
-                ", identityCardNumberEmployee=" + identityCardNumberEmployee +
-                ", phoneNumberEmployee=" + phoneNumberEmployee +
-                ", emailEmployee='" + emailEmployee + '\'' +
-                ", literacyEmployee='" + literacyEmployee + '\'' +
-                ", positionEmployee='" + positionEmployee + '\'' +
-                ", wageEmployee=" + wageEmployee +
+                "literacy='" + literacy + '\'' +
+                ", position='" + position + '\'' +
+                ", wage=" + wage +
                 '}';
     }
 }
