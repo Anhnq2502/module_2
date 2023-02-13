@@ -1,40 +1,33 @@
 package models;
 
-import java.time.LocalDate;
+public class Customer extends Person {
+    int customerCode;
+    String customerType;
 
-public class Customer extends Person{
-    private String typeOfGuest;
-    private String addressCustomer;
-
-
-    public Customer(int code, String fullName, LocalDate dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email, String typeOfGuest, String addressCustomer) {
-        super(code, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
-        this.typeOfGuest = typeOfGuest;
-        this.addressCustomer = addressCustomer;
+    public Customer(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email, int customerCode, String customerType) {
+        super(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email);
+        this.customerCode = customerCode;
+        this.customerType = customerType;
     }
 
-    public String getTypeOfGuest() {
-        return typeOfGuest;
+    public int getCustomerCode() {
+        return customerCode;
     }
 
-    public void setTypeOfGuest(String typeOfGuest) {
-        this.typeOfGuest = typeOfGuest;
+    public void setCustomerCode(int customerCode) {
+        this.customerCode = customerCode;
     }
 
-    public String getAddressCustomer() {
-        return addressCustomer;
+    public String getCustomerType() {
+        return customerType;
     }
 
-    public void setAddressCustomer(String addressCustomer) {
-        this.addressCustomer = addressCustomer;
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
     }
-
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "typeOfGuest='" + typeOfGuest + '\'' +
-                ", addressCustomer='" + addressCustomer + '\'' +
-                '}';
+        return customerCode + "," + customerType + "," + name + "," + dayOfBirth + "," + sex + "," + identityCardNumber + "," + phoneNumber + "," + email;
     }
 }

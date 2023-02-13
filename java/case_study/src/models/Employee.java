@@ -1,51 +1,53 @@
 package models;
 
-import java.time.LocalDate;
+public class Employee extends People {
+    int employeeCode;
+    String level;
+    String workingPosition;
+    Double wage;
 
-public class Employee extends Person {
-
-    private String literacy;
-    private String position;
-    private int wage;
-
-
-    public Employee(int code, String fullName, LocalDate dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email, String literacy, String position, int wage) {
-        super(code, fullName, dateOfBirth, gender, identityCardNumber, phoneNumber, email);
-        this.literacy = literacy;
-        this.position = position;
+    public Employee(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email, int employeeCode, String level, String workingPosition, Double wage) {
+        super(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email);
+        this.employeeCode = employeeCode;
+        this.level = level;
+        this.workingPosition = workingPosition;
         this.wage = wage;
     }
 
-    public String getLiteracy() {
-        return literacy;
+    public int getEmployeeCode() {
+        return employeeCode;
     }
 
-    public void setLiteracy(String literacy) {
-        this.literacy = literacy;
+    public void setEmployeeCode(int employeeCode) {
+        this.employeeCode = employeeCode;
     }
 
-    public String getPosition() {
-        return position;
+    public String getLevel() {
+        return level;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setLevel(String level) {
+        this.level = level;
     }
 
-    public int getWage() {
+    public String getWorkingPosition() {
+        return workingPosition;
+    }
+
+    public void setWorkingPosition(String workingPosition) {
+        this.workingPosition = workingPosition;
+    }
+
+    public Double getWage() {
         return wage;
     }
 
-    public void setWage(int wage) {
+    public void setWage(Double wage) {
         this.wage = wage;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "literacy='" + literacy + '\'' +
-                ", position='" + position + '\'' +
-                ", wage=" + wage +
-                '}';
+        return employeeCode + "," + level + "," + workingPosition + "," + wage + "," + name + "," + dayOfBirth + "," + sex + "," + identityCardNumber + "," + phoneNumber + "," + email;
     }
 }

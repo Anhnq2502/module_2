@@ -1,17 +1,17 @@
 package models;
 
 public abstract class Facility {
-    private String serviceName;
-    private int usableArea;
-    private int rentalCosts;
-    private int maximumPeople;
-    private String rentalType;
+    String serviceName;
+    Double usableArea;
+    Double rentalCost;
+    int maximum;
+    String rentalType;
 
-    public Facility(String serviceName, int usableArea, int rentalCosts, int maximumPeople, String rentalType) {
+    public Facility(String serviceName, Double usableArea, Double rentalCost, int maximum, String rentalType) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
-        this.rentalCosts = rentalCosts;
-        this.maximumPeople = maximumPeople;
+        this.rentalCost = rentalCost;
+        this.maximum = maximum;
         this.rentalType = rentalType;
     }
 
@@ -23,28 +23,28 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public int getUsableArea() {
+    public Double getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(int usableArea) {
+    public void setUsableArea(Double usableArea) {
         this.usableArea = usableArea;
     }
 
-    public int getRentalCosts() {
-        return rentalCosts;
+    public Double getRentalCost() {
+        return rentalCost;
     }
 
-    public void setRentalCosts(int rentalCosts) {
-        this.rentalCosts = rentalCosts;
+    public void setRentalCost(Double rentalCost) {
+        this.rentalCost = rentalCost;
     }
 
-    public int getMaximumPeople() {
-        return maximumPeople;
+    public int getMaximum() {
+        return maximum;
     }
 
-    public void setMaximumPeople(int maximumPeople) {
-        this.maximumPeople = maximumPeople;
+    public void setMaximum(int maximum) {
+        this.maximum = maximum;
     }
 
     public String getRentalType() {
@@ -53,16 +53,5 @@ public abstract class Facility {
 
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
-    }
-
-    @Override
-    public String toString() {
-        return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCosts=" + rentalCosts +
-                ", maximumPeople=" + maximumPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
     }
 }

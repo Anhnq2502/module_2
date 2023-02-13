@@ -1,16 +1,25 @@
 package models;
 
-public class Villa extends Facility {
-    private String roomStandard;
-    private int poolArea;
-    private int numberFloor;
+public class Villa extends Facility{
+    String roomStandard;
+    Double swimmingPoolArea;
+    int numberOfFloors;
+    String villaCode;
 
-
-    public Villa(String serviceName, int usableArea, int rentalCosts, int maximumPeople, String rentalType, String roomStandard, int poolArea, int numberFloor) {
-        super(serviceName, usableArea, rentalCosts, maximumPeople, rentalType);
+    public Villa(String serviceName, Double usableArea, Double rentalCost, int maximum, String rentalType, String roomStandard, Double swimmingPoolArea, int numberOfFloors, String villaCode) {
+        super(serviceName, usableArea, rentalCost, maximum, rentalType);
         this.roomStandard = roomStandard;
-        this.poolArea = poolArea;
-        this.numberFloor = numberFloor;
+        this.swimmingPoolArea = swimmingPoolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.villaCode = villaCode;
+    }
+
+    public String getVillaCode() {
+        return villaCode;
+    }
+
+    public void setVillaCode(String villaCode) {
+        this.villaCode = villaCode;
     }
 
     public String getRoomStandard() {
@@ -21,28 +30,24 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public int getPoolArea() {
-        return poolArea;
+    public Double getSwimmingPoolArea() {
+        return swimmingPoolArea;
     }
 
-    public void setPoolArea(int poolArea) {
-        this.poolArea = poolArea;
+    public void setSwimmingPoolArea(Double swimmingPoolArea) {
+        this.swimmingPoolArea = swimmingPoolArea;
     }
 
-    public int getNumberFloor() {
-        return numberFloor;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setNumberFloor(int numberFloor) {
-        this.numberFloor = numberFloor;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "roomStandard='" + roomStandard + '\'' +
-                ", poolArea=" + poolArea +
-                ", numberFloor=" + numberFloor +
-                '}';
+        return serviceName+","+usableArea+","+rentalCost+","+maximum+","+rentalType+","+roomStandard+","+swimmingPoolArea+","+numberOfFloors+","+villaCode;
     }
 }

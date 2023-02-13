@@ -1,16 +1,17 @@
-package services;
 
-import controllers.FuramaController;
-import models.Employee;
-import utils.DataEmployee;
-import utils.Constant;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+        import casetudy.controller.FuramaController;
+        import casetudy.models.Employee;
+        import casetudy.servives.interfacee.IEmployeeService;
+        import casetudy.utils.DataEmployee;
+        import casetudy.utils.HangSo;
+
+        import java.io.BufferedWriter;
+        import java.io.FileWriter;
+        import java.io.IOException;
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
     DataEmployee dataEmployee = new DataEmployee();
@@ -117,7 +118,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         FileWriter fileWriter;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(Constant.FILE_EMPLOYEE, true);
+            fileWriter = new FileWriter(HangSo.FILE_EMPLOYEE, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(employee.toString() + "\n");
 
@@ -364,3 +365,18 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     }
 }
+Footer
+        © 2023 GitHub, Inc.
+        Footer navigation
+        Terms
+        Privacy
+        Security
+        Status
+        Docs
+        Contact GitHub
+        Pricing
+        API
+        Training
+        Blog
+        About
+        modul___2/EmployeeServiceImpl.java at main · minhnguyen0910/modul___2

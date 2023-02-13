@@ -1,21 +1,32 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
-public class Booking {
-    private int bookingCode;
-    private LocalDate startDay;
-    private LocalDate endDay;
-    private String customerCode;
-    private String serviceName;
+public class Booking implements Comparable<Booking>{
+    int bookingCode;
+    LocalDate startDay;
+    LocalDate finishDay;
+    int customerCode;
+    String serviceName;
+    String serviceCode;
 
-
-    public Booking(int bookingCode, LocalDate startDay, LocalDate endDay, String customerCode, String serviceName) {
+    public Booking(int bookingCode, LocalDate startDay, LocalDate finishDay, int customerCode, String serviceName, String serviceCode) {
         this.bookingCode = bookingCode;
         this.startDay = startDay;
-        this.endDay = endDay;
+        this.finishDay = finishDay;
         this.customerCode = customerCode;
         this.serviceName = serviceName;
+        this.serviceCode = serviceCode;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public int getBookingCode() {
@@ -34,19 +45,19 @@ public class Booking {
         this.startDay = startDay;
     }
 
-    public LocalDate getEndDay() {
-        return endDay;
+    public LocalDate getFinishDay() {
+        return finishDay;
     }
 
-    public void setEndDay(LocalDate endDay) {
-        this.endDay = endDay;
+    public void setFinishDay(LocalDate finishDay) {
+        this.finishDay = finishDay;
     }
 
-    public String getCustomerCode() {
+    public int getCustomerCode() {
         return customerCode;
     }
 
-    public void setCustomerCode(String customerCode) {
+    public void setCustomerCode(int customerCode) {
         this.customerCode = customerCode;
     }
 
@@ -60,12 +71,15 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "bookingCode=" + bookingCode +
-                ", startDay=" + startDay +
-                ", endDay=" + endDay +
-                ", customerCode='" + customerCode + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                '}';
+        return bookingCode+","+startDay+","+finishDay+","+customerCode+","+serviceName+","+serviceCode;
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        if (this.startDay.compareTo(o.startDay  )==0){
+            return this.finishDay.compareTo(o.finishDay);
+        }else {
+            return this.startDay.compareTo(o.startDay);
+        }
     }
 }

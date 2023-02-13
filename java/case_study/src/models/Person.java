@@ -1,72 +1,59 @@
 package models;
 
-import java.time.LocalDate;
-
 public abstract class Person {
-    private int code;
-    private String fullName;
-    private LocalDate dateOfBirth;
-    private String gender;
-    private String identityCardNumber;
-    private String phoneNumber;
-    private String email;
+    String name;
+    int dayOfBirth;
+    String sex;
+    int identityCardNumber;
+    int phoneNumber;
+    String email;
 
-
-    public Person(int code, String fullName, LocalDate dateOfBirth, String gender, String identityCardNumber, String phoneNumber, String email) {
-        this.code = code;
-        this.fullName = fullName;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
+    public People(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email) {
+        this.name = name;
+        this.dayOfBirth = dayOfBirth;
+        this.sex = sex;
         this.identityCardNumber = identityCardNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public int getCode() {
-        return code;
+    public String getName() {
+        return name;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFullName() {
-        return fullName;
+    public int getDayOfBirth() {
+        return dayOfBirth;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setDayOfBirth(int dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getSex() {
+        return sex;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getIdentityCardNumber() {
+    public int getIdentityCardNumber() {
         return identityCardNumber;
     }
 
-    public void setIdentityCardNumber(String identityCardNumber) {
+    public void setIdentityCardNumber(int identityCardNumber) {
         this.identityCardNumber = identityCardNumber;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -76,19 +63,5 @@ public abstract class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "code=" + code +
-                ", fullName='" + fullName + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", gender='" + gender + '\'' +
-                ", identityCardNumber='" + identityCardNumber + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
     }
 }

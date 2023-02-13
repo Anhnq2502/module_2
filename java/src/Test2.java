@@ -1,8 +1,8 @@
-package services;
-
-import models.Customer;
-import utils.DataCustomer;
-import utils.Constant;
+import casetudy.models.Customer;
+import casetudy.models.People;
+import casetudy.servives.interfacee.ICustomerService;
+import casetudy.utils.DataCustomer;
+import casetudy.utils.HangSo;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.println("ngay sinh");
         int dayOfBirth = Integer.parseInt(scanner.nextLine());
         System.out.println("gioi tinh");
-        String sex = scanner.nextLine();
+        String gender = scanner.nextLine();
         System.out.println("so chung minh nhan dan");
         int identityCardNumber = Integer.parseInt(scanner.nextLine());
         System.out.println("so dien thoai");
@@ -84,7 +84,7 @@ public class CustomerServiceImpl implements ICustomerService {
         FileWriter fileWriter;
         BufferedWriter bufferedWriter = null;
         try {
-            fileWriter = new FileWriter(Constant.FILE_CUSTOMER, true);
+            fileWriter = new FileWriter(HangSo.FILE_CUSTOMER, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(newCustomer.toString() + "\n");
 

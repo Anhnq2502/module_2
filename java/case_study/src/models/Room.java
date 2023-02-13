@@ -1,26 +1,34 @@
 package models;
 
 
-public class Room extends Facility {
-    private String freeService;
+public class Room extends Facility{
+    String roomCode;
+    String freeServiceIncluded;
 
-    public Room(String serviceName, int usableArea, int rentalCosts, int maximumPeople, String rentalType, String freeService) {
-        super(serviceName, usableArea, rentalCosts, maximumPeople, rentalType);
-        this.freeService = freeService;
+    public Room(String serviceName, Double usableArea, Double rentalCost, int maximum, String rentalType, String roomCode, String freeServiceIncluded) {
+        super(serviceName, usableArea, rentalCost, maximum, rentalType);
+        this.roomCode = roomCode;
+        this.freeServiceIncluded = freeServiceIncluded;
     }
 
-    public String getFreeService() {
-        return freeService;
+    public String getRoomCode() {
+        return roomCode;
     }
 
-    public void setFreeService(String freeService) {
-        this.freeService = freeService;
+    public void setRoomCode(String roomCode) {
+        this.roomCode = roomCode;
+    }
+
+    public String getFreeServiceIncluded() {
+        return freeServiceIncluded;
+    }
+
+    public void setFreeServiceIncluded(String freeServiceIncluded) {
+        this.freeServiceIncluded = freeServiceIncluded;
     }
 
     @Override
     public String toString() {
-        return "Room{" +
-                "freeService='" + freeService + '\'' +
-                '}';
+        return serviceName+","+usableArea+","+rentalCost+","+maximum+","+rentalType+","+roomCode+","+freeServiceIncluded;
     }
 }
