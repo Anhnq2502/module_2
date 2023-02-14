@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Booking implements Comparable<Booking>{
+public class Booking implements Comparable<Booking> {
     int bookingCode;
     LocalDate startDay;
     LocalDate finishDay;
@@ -71,14 +71,14 @@ public class Booking implements Comparable<Booking>{
 
     @Override
     public String toString() {
-        return bookingCode+","+startDay+","+finishDay+","+customerCode+","+serviceName+","+serviceCode;
+        return bookingCode + "," + startDay + "," + finishDay + "," + customerCode + "," + serviceName + "," + serviceCode;
     }
 
     @Override
     public int compareTo(Booking o) {
-        if (this.startDay.compareTo(o.startDay  )==0){
+        if (this.startDay.compareTo(o.startDay) == 0) {
             return this.finishDay.compareTo(o.finishDay);
-        }else {
+        } else {
             return this.startDay.compareTo(o.startDay);
         }
     }

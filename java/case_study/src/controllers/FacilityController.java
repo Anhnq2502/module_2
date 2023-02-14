@@ -1,26 +1,29 @@
 package controllers;
 
+import services.FacilityServiceImpl;
+
 import java.util.Scanner;
 
 public class FacilityController {
     public static void facilityManagement() {
-        System.out.println("Menu \n" +
-                "1.Display list facility \n" +
-                "2.Add new facility \n" +
-                "3.Display list facility maintenance \n" +
-                "4.Return main menu \n ");
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        System.out.println("Menu\n" +
+                "1.Display list facility\n" +
+                "2.Add new facility\n" +
+                "3.Display list facility maintenance\n" +
+                "4.Return main menu\n ");
         Scanner scanner = new Scanner(System.in);
         String select = scanner.nextLine();
         do {
             switch (select) {
                 case "1":
-                    displayListFacility();
+                    facilityService.displayListFacility();
                     break;
                 case "2":
-                    addNewFacility();
+                    facilityService.addNewFacility();
                     break;
                 case "3":
-                    displayListFacilityMaintenance();
+                    facilityService.displayListFacilityMaintenance();
                     break;
                 case "4":
                     FuramaController.displayMainMenu();

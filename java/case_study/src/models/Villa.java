@@ -1,6 +1,6 @@
 package models;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     String roomStandard;
     Double swimmingPoolArea;
     int numberOfFloors;
@@ -48,6 +48,6 @@ public class Villa extends Facility{
 
     @Override
     public String toString() {
-        return serviceName+","+usableArea+","+rentalCost+","+maximum+","+rentalType+","+roomStandard+","+swimmingPoolArea+","+numberOfFloors+","+villaCode;
+        return serviceName + "," + usableArea + "," + rentalCost + "," + maximum + "," + rentalType + "," + roomStandard + "," + swimmingPoolArea + "," + numberOfFloors + "," + villaCode;
     }
 }

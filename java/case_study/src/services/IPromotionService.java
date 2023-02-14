@@ -1,6 +1,6 @@
 package services;
 
-public interface IPromotionManagement extends IService{
+public interface IPromotionService extends IService{
     void displayListCustomerUseService();
     void displayListCustomerGetVoucher();
 }

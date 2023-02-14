@@ -182,7 +182,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "3": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -200,7 +201,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "4": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -218,7 +220,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "5": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -236,7 +239,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "6": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -254,7 +258,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "7": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -272,7 +277,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "8": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -290,7 +296,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "9": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -308,7 +315,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "10": {
                     boolean flag = true;
                     System.out.println("nhap ten can sua");
@@ -326,7 +334,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
                     }
 
-                }break;
+                }
+                break;
                 case "12":
                     furamaController.displayMainMenu();
                     break;
@@ -351,8 +360,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
             if (employeeList1.isEmpty()) {
                 System.out.println("khong co nhan vien");
             } else {
-                for (int i=0; i<employeeList1.size();i++) {
-                    if (codeEmployee==employeeList1.get(i).getEmployeeCode()) {
+                for (int i = 0; i < employeeList1.size(); i++) {
+                    if (codeEmployee == employeeList1.get(i).getEmployeeCode()) {
                         employeeList1.remove(i);
                     }
                 }
@@ -361,6 +370,26 @@ public class EmployeeServiceImpl implements IEmployeeService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    @Override
+    public void displayListEmployees() {
+
+    }
+
+    @Override
+    public void addNewEmployee() {
+
+    }
+
+    @Override
+    public void deleteEmployee() {
+
+    }
+
+    @Override
+    public void editEmployee() {
 
     }
 }

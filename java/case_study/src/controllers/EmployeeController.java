@@ -6,27 +6,28 @@ import java.util.Scanner;
 
 public class EmployeeController {
     public static void employeeManagement() {
-        System.out.println("Menu \n" +
-                "1.Display list employees \n" +
-                "2.Add new employee \n" +
-                "3.Delete employee \n" +
-                "4.Edit employee \n " +
-                "5.Return main menu \n");
+        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+        System.out.println("Menu\n" +
+                "1.Display list employees\n" +
+                "2.Add new employee\n" +
+                "3.Delete employee\n" +
+                "4.Edit employee\n" +
+                "5.Return main menu\n");
         Scanner scanner = new Scanner(System.in);
         String select = scanner.nextLine();
         do {
             switch (select) {
                 case "1":
-                    displayListEmployees();
+                    employeeService.display();
                     break;
                 case "2":
-                    addNewEmployee();
+                    employeeService.add();
                     break;
                 case "3":
-                    deleteEmployee();
+                    employeeService.remove();
                     break;
                 case "4":
-                    editEmployee();
+                    employeeService.edit();
                     break;
                 case "5":
                     FuramaController.displayMainMenu();

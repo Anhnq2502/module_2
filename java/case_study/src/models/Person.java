@@ -8,7 +8,7 @@ public abstract class Person {
     int phoneNumber;
     String email;
 
-    public People(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email) {
+    public Person(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email) {
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.sex = sex;

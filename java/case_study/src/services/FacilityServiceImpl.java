@@ -1,5 +1,7 @@
 package services;
 
+import controllers.FacilityController;
+import controllers.FuramaController;
 import models.Facility;
 import models.Room;
 import models.Villa;
@@ -18,6 +20,79 @@ public class FacilityServiceImpl implements IFacilityService {
     Regex regex = new Regex();
     DataRoom dataRoom = new DataRoom();
     DataVilla dataVilla = new DataVilla();
+
+    @Override
+    public void displayListFacility() {
+        System.out.println("Menu \n" +
+                "1.Display list room \n" +
+                "2.Display list villa \n" +
+                "3.Back to menu \n");
+        String select = scanner.nextLine();
+        do {
+            switch (select) {
+                case "1":
+                    displayListRoom();
+                    break;
+                case "2":
+                    displayListVilla();
+                    break;
+                case "3":
+                    FacilityController.facilityManagement();
+                    break;
+                default:
+                    System.out.println("Chỉ nhập từ 1-3");
+            }
+        } while (true);
+    }
+
+    @Override
+    public void addNewFacility() {
+        System.out.println("Menu \n" +
+                "1.Add new villa \n" +
+                "2.add new room \n" +
+                "3.Back to menu \n");
+        String select = scanner.nextLine();
+        do {
+            switch (select) {
+                case "1":
+                    addVilla();
+                    break;
+                case "2":
+                    addRoom();
+                    break;
+                case "3":
+                    FacilityController.facilityManagement();
+                    break;
+                default:
+                    System.out.println("Chỉ nhập từ 1-3");
+            }
+        } while (true);
+    }
+
+    @Override
+    public void displayListFacilityMaintenance() {
+        List<Facility> facilityList = new ArrayList<>();
+        Map<Room, Integer> roomIntegerMap;
+        Map<Villa, Integer> villaIntegerMap;
+        try {
+            roomIntegerMap = dataRoom.Read();
+            villaIntegerMap = dataVilla.Read();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        for (Facility i : roomIntegerMap.keySet()) {
+            if (roomIntegerMap.get(i) >= 5) {
+                facilityList.add(i);
+            }
+        }
+        for (Facility i : villaIntegerMap.keySet()) {
+            if (villaIntegerMap.get(i) >= 5) {
+                facilityList.add(i);
+            }
+        }
+        System.out.println(facilityList);
+    }
 
     public void addRoom() {
         String roomCode;
@@ -111,20 +186,18 @@ public class FacilityServiceImpl implements IFacilityService {
         Room room = new Room(serviceName, usableArea, rentalCost, maximum, rentalType, roomCode, freeServiceIncluded);
         BufferedWriter bufferedWriter = null;
         try {
-            FileWriter fileWriter = new FileWriter(Constant.FILE_ROOM,true);
+            FileWriter fileWriter = new FileWriter(Constant.FILE_ROOM, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(room + "," + count+"\n");
+            bufferedWriter.write(room + "," + count + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             try {
                 bufferedWriter.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-
-
     }
 
     public void addVilla() {
@@ -240,15 +313,15 @@ public class FacilityServiceImpl implements IFacilityService {
                 flagOfCount = false;
             }
         } while (!flagOfCount);
-        Villa villa =new Villa(serviceName, usableArea, rentalCost, maximum, rentalType, roomStandard, swimmingPoolArea, numberOfFloor, villaCode);
+        Villa villa = new Villa(serviceName, usableArea, rentalCost, maximum, rentalType, roomStandard, swimmingPoolArea, numberOfFloor, villaCode);
         BufferedWriter bufferedWriter = null;
         try {
-            FileWriter fileWriter = new FileWriter(Constant.FILE_VILLA,true);
+            FileWriter fileWriter = new FileWriter(Constant.FILE_VILLA, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(villa + "," + count+"\n");
+            bufferedWriter.write(villa + "," + count + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }finally {
+        } finally {
             try {
                 bufferedWriter.close();
             } catch (IOException e) {
@@ -256,32 +329,7 @@ public class FacilityServiceImpl implements IFacilityService {
             }
         }
     }
-
-    public void maintenance() {
-        List<Facility> facilityList = new ArrayList<>();
-        Map<Room,Integer> roomIntegerMap;
-        Map<Villa,Integer> villaIntegerMap;
-        try {
-            roomIntegerMap =dataRoom.Read();
-            villaIntegerMap =dataVilla.Read();
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }
-
-        for (Facility i : roomIntegerMap.keySet()) {
-            if (roomIntegerMap.get(i)>= 5) {
-                facilityList.add(i);
-            }
-        }
-        for (Facility i : villaIntegerMap.keySet()) {
-            if (villaIntegerMap.get(i) >= 5) {
-                facilityList.add(i);
-            }
-        }
-        System.out.println(facilityList);
-    }
-
-    public void disPlayListRoom() {
+    public void displayListRoom() {
         try {
             Map<Room, Integer> room = dataRoom.Read();
             for (Room i : room.keySet()) {

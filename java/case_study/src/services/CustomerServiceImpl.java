@@ -1,6 +1,7 @@
 package services;
 
 import models.Customer;
+import models.Person;
 import utils.DataCustomer;
 import utils.Constant;
 
@@ -14,22 +15,22 @@ public class CustomerServiceImpl implements ICustomerService {
     static List<Customer> customerList = new LinkedList<>();
     DataCustomer dataCustomer = new DataCustomer();
 
-    public void add(){
-        System.out.println("ten khach hang");
+    public void add() {
+        System.out.println("Tên khách hàng");
         String name = scanner.nextLine();
-        System.out.println("ngay sinh");
+        System.out.println("Ngày sinh của khac hàng");
         int dayOfBirth = Integer.parseInt(scanner.nextLine());
-        System.out.println("gioi tinh");
+        System.out.println("Giới tính của khách hàng");
         String sex = scanner.nextLine();
-        System.out.println("so chung minh nhan dan");
+        System.out.println("Số chứng minh nhân dân của khách hàng");
         int identityCardNumber = Integer.parseInt(scanner.nextLine());
-        System.out.println("so dien thoai");
+        System.out.println("Số điện thoại của khách hàng");
         int phoneNumber = Integer.parseInt(scanner.nextLine());
-        System.out.println("email");
+        System.out.println("email của khách hàng");
         String email = scanner.nextLine();
         int customerCode;
         boolean flagOfCustomerCode;
-        System.out.println("ma khach hang");
+        System.out.println("Mã khách hàng");
         do {
             customerCode = Integer.parseInt(scanner.nextLine());
             flagOfCustomerCode = true;
@@ -44,16 +45,16 @@ public class CustomerServiceImpl implements ICustomerService {
             }
 
             if (!flagOfCustomerCode) {
-                System.out.println("ma da ton tai\n" +
-                        "vui long nhap lai");
+                System.out.println("Mã đã tồn tại\n" +
+                        "vui lòng nhập lại");
             }
         } while (!flagOfCustomerCode);
         String customerType = null;
         String chooseOfCustomerType;
         do {
-            System.out.println("chon kieu khach hang\n" +
+            System.out.println("Chọn kiểu khách hàng\n" +
                     "1.Diamond\n" +
-                    "2.Platinium\n" +
+                    "2.Platinum\n" +
                     "3.Gold\n" +
                     "4.Silver\n" +
                     "5.Member");
@@ -63,7 +64,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     customerType = "Diamond";
                     break;
                 case "2":
-                    customerType = "Platinium";
+                    customerType = "Platinum";
                     break;
                 case "3":
                     customerType = "Gold";
@@ -75,7 +76,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     customerType = "Member";
                     break;
                 default:
-                    System.out.println("vui long nhap lua chon tu 1 => 5");
+                    System.out.println("Chỉ chọn từ 1 - 5");
 
             }
         } while (!"12345".contains(chooseOfCustomerType));
@@ -106,7 +107,7 @@ public class CustomerServiceImpl implements ICustomerService {
             if (dataCustomer.Read().isEmpty()) {
                 System.out.println("không có khách hàng");
             } else {
-                for (People i : dataCustomer.Read()) {
+                for (Person i : dataCustomer.Read()) {
                     System.out.println(i);
                 }
             }
@@ -123,7 +124,7 @@ public class CustomerServiceImpl implements ICustomerService {
             throw new RuntimeException(e);
         }
 
-        System.out.println("nhap ma khách hang");
+        System.out.println("Nhập mã khách hàng");
         int customerCode = Integer.parseInt(scanner.nextLine());
         boolean flagOfPeople = false;
         for (Customer i : customerList1) {
@@ -132,20 +133,20 @@ public class CustomerServiceImpl implements ICustomerService {
             }
         }
         if (flagOfPeople) {
-            System.out.println("nhap thong tin can sua\n" +
-                    "1.name\n" +
-                    "2.ngay sinh\n" +
-                    "3.gioi tinh\n" +
-                    "4.so chung minh nhan dan\n" +
-                    "5.so dien thoi\n" +
+            System.out.println("Nhập thông tin cần sửa\n" +
+                    "1.Tên\n" +
+                    "2.Ngày sinh\n" +
+                    "3.Giới tính\n" +
+                    "4.Số chứng minhh nhân dân\n" +
+                    "5.Số điện thoại\n" +
                     "6.email\n" +
-                    "7.ma khach hang\n" +
-                    "8.kieu khach hang\n" +
-                    "9.luu thay doi");
+                    "7.Mã khách hàng\n" +
+                    "8.Kiểu khách hàng\n" +
+                    "9.Lưu thay đổi");
             String choose = scanner.nextLine();
             switch (choose) {
                 case "1":
-                    System.out.println("nhap ten moi");
+                    System.out.println("Nhập tên mới");
                     String name = scanner.nextLine();
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -154,7 +155,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "2":
-                    System.out.println("nhap ngay sinh moi");
+                    System.out.println("Nhập ngày sinh mới");
                     int dayOfBirth = Integer.parseInt(scanner.nextLine());
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -163,7 +164,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "3":
-                    System.out.println("nhap gioi tinh");
+                    System.out.println("Nhập giới tính mới");
                     String sex = scanner.nextLine();
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -172,7 +173,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "4":
-                    System.out.println("nhap so cmnd moi");
+                    System.out.println("Nhập số chứng minh nhân dân mới");
                     int identityCardNumber = Integer.parseInt(scanner.nextLine());
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -181,7 +182,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "5":
-                    System.out.println("nhap so dien thoai moi");
+                    System.out.println("Nhập số điện thoại mới");
                     int phoneNumber = Integer.parseInt(scanner.nextLine());
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -190,7 +191,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "6":
-                    System.out.println("nhap email moi");
+                    System.out.println("Nhập email mới");
                     String email = scanner.nextLine();
                     for (Customer i : customerList1) {
                         if (customerCode == i.getCustomerCode()) {
@@ -199,7 +200,7 @@ public class CustomerServiceImpl implements ICustomerService {
                     }
                     break;
                 case "7":
-                    System.out.println("nhap ma moi");
+                    System.out.println("Nhập mã mới");
                     int newCustomerCode = Integer.parseInt(scanner.nextLine());
                     boolean flags = false;
                     for (Customer i : customerList1) {
@@ -214,16 +215,16 @@ public class CustomerServiceImpl implements ICustomerService {
                             }
                         }
                     } else {
-                        System.out.println("ma khach hang da on tai");
+                        System.out.println("Mã khách hàng đã tồn tại");
                     }
                     break;
                 case "8":
                     String chooseOfCustomerType = null;
                     String customerType = null;
                     do {
-                        System.out.println("chon kieu khach hang moi\n" +
+                        System.out.println("Chọn kiểu khách hàng mới\n" +
                                 "1.Diamond\n" +
-                                "2.Platinium\n" +
+                                "2.Platinum\n" +
                                 "3.Gold\n" +
                                 "4.Silver\n" +
                                 "5.Member");
@@ -233,7 +234,7 @@ public class CustomerServiceImpl implements ICustomerService {
                                 customerType = "Diamond";
                                 break;
                             case "2":
-                                customerType = "Platinium";
+                                customerType = "Platinum";
                                 break;
                             case "3":
                                 customerType = "Gold";
@@ -259,11 +260,11 @@ public class CustomerServiceImpl implements ICustomerService {
                 throw new RuntimeException(e);
             }
         } else {
-            System.out.println("ma khong ton tai");
+            System.out.println("Mã không tồn tại");
         }
     }
 
-    public void remove(){
+    public void remove() {
         List<Customer> customerList2;
         try {
             customerList2 = dataCustomer.Read();
@@ -271,9 +272,9 @@ public class CustomerServiceImpl implements ICustomerService {
             throw new RuntimeException();
         }
         if (customerList2.isEmpty()) {
-            System.out.println("khong co khach hang");
+            System.out.println("Không có khách hàng");
         } else {
-            System.out.println("nhap ma khach hang");
+            System.out.println("Nhập mã khách hàng");
             int customerCode = Integer.parseInt(scanner.nextLine());
             boolean flag = true;
             for (Customer i : customerList2) {
@@ -284,7 +285,7 @@ public class CustomerServiceImpl implements ICustomerService {
                 }
             }
             if (flag) {
-                System.out.println("ma khong ton tai");
+                System.out.println("Mã khng tồn tại");
             }
         }
         try {
@@ -292,5 +293,20 @@ public class CustomerServiceImpl implements ICustomerService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void displayListCustomer() {
+
+    }
+
+    @Override
+    public void addNewCustomer() {
+
+    }
+
+    @Override
+    public void editCustomer() {
+
     }
 }

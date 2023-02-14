@@ -1,6 +1,6 @@
 package models;
 
-public class Employee extends People {
+public class Employee extends Person {
     int employeeCode;
     String level;
     String workingPosition;
