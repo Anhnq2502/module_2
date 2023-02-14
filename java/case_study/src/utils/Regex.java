@@ -8,7 +8,6 @@ public class Regex {
     public final String CODE_VILLA_SERVICE_REGEX = "^SVVL-\\d{4}$";
     public final String CODE_ROOM_SERVICE_REGEX = "^SVRO-\\d{4}$";
     public final String CODE_DAY_REGEX="^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
-    //    public final String NAME_SERVICE=""
     public Pattern pattern;
     public Matcher matcher;
 
