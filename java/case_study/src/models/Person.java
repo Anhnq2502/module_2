@@ -2,13 +2,13 @@ package models;
 
 public abstract class Person {
     String name;
-    int dayOfBirth;
+    String dayOfBirth;
     String sex;
     int identityCardNumber;
     int phoneNumber;
     String email;
 
-    public Person(String name, int dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email) {
+    public Person(String name, String dayOfBirth, String sex, int identityCardNumber, int phoneNumber, String email) {
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.sex = sex;
@@ -25,11 +25,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getDayOfBirth() {
+    public String getDayOfBirth() {
         return dayOfBirth;
     }
 
-    public void setDayOfBirth(int dayOfBirth) {
+    public void setDayOfBirth(String dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
     }
 

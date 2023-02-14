@@ -20,17 +20,17 @@ public class DataEmployee {
         String[] temp;
         while ((line = bufferedReader.readLine()) != null) {
             temp = line.split(",");
-            int employeeCode = Integer.parseInt(temp[0]);
-            String level=temp[1];
-            String workingPosition=temp[2];
-            Double wage=Double.parseDouble(temp[3]);
-            String name = temp[4];
-            int dayOfBirth = Integer.parseInt(temp[5]);
-            String sex = temp[6];
-            int identityCardNumber = Integer.parseInt(temp[7]);
-            int phoneNumber = Integer.parseInt(temp[8]);
-            String email = temp[9];
-            customerList1.add(new Employee(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email, employeeCode, level,workingPosition,wage));
+            int employeeCode = Integer.parseInt(temp[6]);
+            String level=temp[7];
+            String workingPosition=temp[8];
+            Double wage=Double.parseDouble(temp[9]);
+            String name = temp[0];
+            int dayOfBirth = Integer.parseInt(temp[1]);
+            String sex = temp[2];
+            int identityCardNumber = Integer.parseInt(temp[3]);
+            int phoneNumber = Integer.parseInt(temp[4]);
+            String email = temp[5];
+            customerList1.add(new Employee(name, String.valueOf(dayOfBirth), sex, identityCardNumber, phoneNumber, email, employeeCode, level,workingPosition,wage));
         }
         bufferedReader.close();
         return customerList1;
@@ -45,8 +45,9 @@ public class DataEmployee {
                 bufferedWriter.write(i.toString()+"\n");
             }
         } catch (IOException e) {
-            System.out.println("Can not write to file");
+            System.out.println("Không thể viết file");
         } finally {
+            assert bufferedWriter != null;
             bufferedWriter.close();
         }
     }

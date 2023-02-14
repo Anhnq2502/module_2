@@ -23,12 +23,13 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void displayListFacility() {
-        System.out.println("Menu \n" +
+
+        do {
+            System.out.println("Menu \n" +
                 "1.Display list room \n" +
                 "2.Display list villa \n" +
                 "3.Back to menu \n");
-        String select = scanner.nextLine();
-        do {
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
                     displayListRoom();
@@ -47,12 +48,13 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void addNewFacility() {
-        System.out.println("Menu \n" +
+
+        do {
+            System.out.println("Menu \n" +
                 "1.Add new villa \n" +
                 "2.add new room \n" +
                 "3.Back to menu \n");
-        String select = scanner.nextLine();
-        do {
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
                     addVilla();
@@ -97,12 +99,12 @@ public class FacilityServiceImpl implements IFacilityService {
     public void addRoom() {
         String roomCode;
         do {
-            System.out.println("nhap ma phong theo SVRO-YYYY");
+            System.out.println("Nhập mã phòng theo kiểu SVRO-YYYY");
             roomCode = scanner.nextLine();
         } while (!regex.checkCodeRoomServiceRegex(roomCode));
-        System.out.println("nhap ten dich vu");
+        System.out.println("Nhập tên dịch vụ");
         String serviceName = scanner.nextLine();
-        System.out.println("nhap dien tich su dung");
+        System.out.println("Nhập diện tích sửa dụng");
         Double usableArea = null;
         boolean flagOfUsableArea;
         do {
@@ -110,11 +112,11 @@ public class FacilityServiceImpl implements IFacilityService {
                 usableArea = Double.parseDouble(scanner.nextLine());
                 flagOfUsableArea = true;
             } catch (NumberFormatException e) {
-                System.out.println("vui long nhap dien tich bang chu so");
+                System.out.println("Nhập diện tích bằng chữ số");
                 flagOfUsableArea = false;
             }
         } while (!flagOfUsableArea);
-        System.out.println("nhap gia phong");
+        System.out.println("Nhập giá phòng");
         Double rentalCost = null;
         boolean flagOfRentalCost;
         do {
@@ -122,7 +124,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 rentalCost = Double.parseDouble(scanner.nextLine());
                 flagOfRentalCost = true;
             } catch (NumberFormatException e) {
-                System.out.println("vui long nhap gia tien bang chu so");
+                System.out.println("Nhập giá tiền bằng chữ số");
                 flagOfRentalCost = false;
             }
         } while (!flagOfRentalCost);
@@ -332,8 +334,12 @@ public class FacilityServiceImpl implements IFacilityService {
     public void displayListRoom() {
         try {
             Map<Room, Integer> room = dataRoom.Read();
-            for (Room i : room.keySet()) {
-                System.out.println(i + "," + room.get(i));
+            if (dataRoom.Read().isEmpty()){
+                System.out.println("Không có phòng nào");
+            }else {
+                for (Room i : room.keySet()) {
+                    System.out.println(i + "," + room.get(i));
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -343,8 +349,12 @@ public class FacilityServiceImpl implements IFacilityService {
     public void displayListVilla() {
         try {
             Map<Villa, Integer> villa = dataVilla.Read();
-            for (Villa i : villa.keySet()) {
-                System.out.println(i + "," + villa.get(i));
+            if (dataVilla.Read().isEmpty()){
+                System.out.println("Không có phòng nào");
+            }else {
+                for (Villa i : villa.keySet()) {
+                    System.out.println(i + "," + villa.get(i));
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

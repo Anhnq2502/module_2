@@ -7,14 +7,15 @@ import java.util.Scanner;
 public class FacilityController {
     public static void facilityManagement() {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
-        System.out.println("Menu\n" +
+
+        do {
+            System.out.println("Menu\n" +
                 "1.Display list facility\n" +
                 "2.Add new facility\n" +
                 "3.Display list facility maintenance\n" +
                 "4.Return main menu\n ");
-        Scanner scanner = new Scanner(System.in);
-        String select = scanner.nextLine();
-        do {
+            Scanner scanner = new Scanner(System.in);
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
                     facilityService.displayListFacility();

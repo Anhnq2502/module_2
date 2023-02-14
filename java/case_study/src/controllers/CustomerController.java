@@ -7,23 +7,25 @@ import java.util.Scanner;
 public class CustomerController {
     public static void customerManagement() {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
-        System.out.println("Menu\n" +
-                "1.Display list employees\n" +
-                "2.Add new employee\n" +
-                "3.Delete employee\n" +
-                "4.Return main menu\n");
+
         Scanner scanner = new Scanner(System.in);
-        String select = scanner.nextLine();
+
         do {
+            System.out.println("Menu\n" +
+                "1.Display list customer\n" +
+                "2.Add new customer\n" +
+                "3.Edit customer\n" +
+                "4.Return main menu\n");
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
-                    customerService.display();
+                    customerService.displayListCustomer();
                     break;
                 case "2":
-                    customerService.add();
+                    customerService.addNewCustomer();
                     break;
                 case "3":
-                    customerService.edit();
+                    customerService.editCustomer();
                     break;
                 case "4":
                     FuramaController.displayMainMenu();

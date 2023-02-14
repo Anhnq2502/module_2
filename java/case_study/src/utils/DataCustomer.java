@@ -28,7 +28,7 @@ public class DataCustomer {
             int identityCardNumber = Integer.parseInt(temp[5]);
             int phoneNumber = Integer.parseInt(temp[6]);
             String email = temp[7];
-            customerList1.add(new Customer(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email, customerCode, customerType));
+            customerList1.add(new Customer(name, String.valueOf(dayOfBirth), sex, identityCardNumber, phoneNumber, email, customerCode, customerType));
 
 
         }

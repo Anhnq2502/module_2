@@ -7,13 +7,14 @@ import java.util.Scanner;
 public class PromotionController {
     public static void promotionManagement() {
         PromotionServiceImpl promotionService = new PromotionServiceImpl();
-        System.out.println("Menu \n" +
+
+        do {
+            System.out.println("Menu \n" +
                 "1.Display list customer use service\n" +
                 "2.Display list customer get voucher\n" +
                 "3.Return main menu");
-        Scanner scanner = new Scanner(System.in);
-        String select = scanner.nextLine();
-        do {
+            Scanner scanner = new Scanner(System.in);
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
                     promotionService.displayListCustomerUseService();
