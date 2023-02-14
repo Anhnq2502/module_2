@@ -1,7 +1,6 @@
 package services;
 
 import controllers.EmployeeController;
-import controllers.FuramaController;
 import models.Employee;
 import models.Person;
 import utils.DataEmployee;
@@ -101,8 +100,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
                     "2.Phục vụ\n" +
                     "3.Chuyên viên\n" +
                     "4.Giám sát\n" +
-                    "5.Giám đốc\n" +
-                    "6.Vị trí khác");
+                    "5.Quản lý\n" +
+                    "6.Giám đốc\n" +
+                    "7.Vị trí khác");
             chooseOfWorkingPosition = scanner.nextLine();
             switch (chooseOfWorkingPosition) {
                 case "1":
@@ -118,13 +118,16 @@ public class EmployeeServiceImpl implements IEmployeeService {
                     workingPosition = "Giám sát";
                     break;
                 case "5":
-                    workingPosition = "Giám đốc";
+                    workingPosition = "Quản lý";
                     break;
                 case "6":
+                    workingPosition = "Giám đốc";
+                    break;
+                case "7":
                     workingPosition = scanner.nextLine();
                     break;
                 default:
-                    System.out.println("Chỉ chọn từ 1 - 6");
+                    System.out.println("Chỉ chọn từ 1 - 7");
             }
         } while (!"123456".contains(chooseOfWorkingPosition));
         System.out.println("Nhập số lương");
@@ -137,8 +140,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
             fileWriter = new FileWriter(Constant.FILE_EMPLOYEE, true);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(employee.toString() + "\n");
-
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
