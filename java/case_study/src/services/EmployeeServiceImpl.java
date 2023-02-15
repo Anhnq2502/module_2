@@ -10,6 +10,9 @@ import utils.Regex;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,10 +45,15 @@ public class EmployeeServiceImpl implements IEmployeeService {
         System.out.println("Tên nhân viên");
         String name = scanner.nextLine();
         String dayOfBirth;
+        int age;
         do {
             System.out.println("Ngày sinh");
+            LocalDate localDate = LocalDate.now();
             dayOfBirth = scanner.nextLine();
-        } while (!regex.checkCodeDay(dayOfBirth));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse(dayOfBirth, formatter);
+            age = Period.between(date, localDate).getYears();
+        } while (!regex.checkCodeDay(dayOfBirth) || age < 18 || age > 100);
         System.out.println("Giới tính");
         String sex = scanner.nextLine();
         System.out.println("Số chứng minh nhân dân");

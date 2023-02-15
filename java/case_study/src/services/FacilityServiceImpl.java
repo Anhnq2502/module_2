@@ -8,7 +8,6 @@ import utils.DataRoom;
 import utils.DataVilla;
 import utils.Constant;
 import utils.Regex;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -103,42 +102,45 @@ public class FacilityServiceImpl implements IFacilityService {
         } while (!regex.checkCodeRoomServiceRegex(roomCode));
         System.out.println("Nhập tên dịch vụ");
         String serviceName = scanner.nextLine();
-        System.out.println("Nhập diện tích sửa dụng");
+
         Double usableArea = null;
         boolean flagOfUsableArea;
         do {
             try {
+                System.out.println("Nhập diện tích sửa dụng");
                 usableArea = Double.parseDouble(scanner.nextLine());
                 flagOfUsableArea = true;
             } catch (NumberFormatException e) {
                 System.out.println("Nhập diện tích bằng chữ số");
                 flagOfUsableArea = false;
             }
-        } while (!flagOfUsableArea);
-        System.out.println("Nhập giá phòng");
+        } while (!flagOfUsableArea || usableArea < 30);
+
         Double rentalCost = null;
         boolean flagOfRentalCost;
         do {
             try {
+                System.out.println("Nhập giá phòng");
                 rentalCost = Double.parseDouble(scanner.nextLine());
                 flagOfRentalCost = true;
             } catch (NumberFormatException e) {
                 System.out.println("Nhập giá tiền bằng chữ số");
                 flagOfRentalCost = false;
             }
-        } while (!flagOfRentalCost);
-        System.out.println("Nhập số người tối đa");
+        } while (!flagOfRentalCost || rentalCost < 0);
+
         boolean flagOfPeople;
         int maximum = 0;
         do {
             try {
+                System.out.println("Nhập số người tối đa");
                 maximum = Integer.parseInt(scanner.nextLine());
                 flagOfPeople = true;
             } catch (NumberFormatException e) {
                 System.out.println("Vui lòng nhập số người bằng chữ số");
                 flagOfPeople = false;
             }
-        } while (!flagOfPeople);
+        } while (!flagOfPeople || maximum < 0 || maximum > 20);
         String chooseOfRentalType;
         String rentalType = null;
         do {
@@ -166,11 +168,11 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.println("Chọn dịch vụ miễn phí đi kèm");
         String freeServiceIncluded = scanner.nextLine();
 
-        System.out.println("Nhập số lần đã sử dụng 0 <= number <= 5");
         int count = 0;
         boolean flagOfCount;
         do {
             try {
+                System.out.println("Nhập số lần đã sử dụng 0 <= number <= 5");
                 do {
                     count = Integer.parseInt(scanner.nextLine());
                     if (count > 5 || count < 1) {
@@ -209,42 +211,45 @@ public class FacilityServiceImpl implements IFacilityService {
         } while (!regex.checkCodeVillaServiceRegex(villaCode));
         System.out.println("Nhập tên dịch vụ");
         String serviceName = scanner.nextLine();
-        System.out.println("Nhập diện tích sử dụng");
+
         Double usableArea = null;
         boolean flagOfUsableArea;
         do {
             try {
+                System.out.println("Nhập diện tích sử dụng");
                 usableArea = Double.parseDouble(scanner.nextLine());
                 flagOfUsableArea = true;
             } catch (NumberFormatException e) {
                 System.out.println("Chỉ được nhập số");
                 flagOfUsableArea = false;
             }
-        } while (!flagOfUsableArea);
-        System.out.println("Nhập giá phòng");
+        } while (!flagOfUsableArea || usableArea < 30);
+
         Double rentalCost = null;
         boolean flagOfRentalCost;
         do {
             try {
+                System.out.println("Nhập giá phòng");
                 rentalCost = Double.parseDouble(scanner.nextLine());
                 flagOfRentalCost = true;
             } catch (NumberFormatException e) {
                 System.out.println("Chỉ được nhập số");
                 flagOfRentalCost = false;
             }
-        } while (!flagOfRentalCost);
-        System.out.println("Nhập số người tối đa");
+        } while (!flagOfRentalCost || rentalCost < 0);
+
         boolean flagOfPeople;
         int maximum = 0;
         do {
             try {
+                System.out.println("Nhập số người tối đa");
                 maximum = Integer.parseInt(scanner.nextLine());
                 flagOfPeople = true;
             } catch (NumberFormatException e) {
                 System.out.println("Chỉ được nhập số");
                 flagOfPeople = false;
             }
-        } while (!flagOfPeople);
+        } while (!flagOfPeople || maximum <0 || maximum > 20);
         String chooseOfRentalType;
         String rentalType = null;
         do {
@@ -271,36 +276,39 @@ public class FacilityServiceImpl implements IFacilityService {
         } while ("123".equals(chooseOfRentalType));
         System.out.println("Nhập tiêu chuẩn phòng");
         String roomStandard = scanner.nextLine();
-        System.out.println("Nhập diện tích hồ bơi");
+
         Double swimmingPoolArea = null;
         boolean flagOfSwimmingPoolArea;
         do {
             try {
+                System.out.println("Nhập diện tích hồ bơi");
                 swimmingPoolArea = Double.parseDouble(scanner.nextLine());
                 flagOfSwimmingPoolArea = true;
             } catch (NumberFormatException e) {
                 System.out.println("Chỉ được nhập số");
                 flagOfSwimmingPoolArea = false;
             }
-        } while (!flagOfSwimmingPoolArea);
-        System.out.println("Nhập số tầng");
+        } while (!flagOfSwimmingPoolArea || swimmingPoolArea < 30);
+
         int numberOfFloor = 0;
         boolean flagOfFloor;
         do {
             try {
+                System.out.println("Nhập số tầng");
                 numberOfFloor = Integer.parseInt(scanner.nextLine());
                     flagOfFloor = true;
             } catch (NumberFormatException e) {
-                System.out.println("Chỉ được nhập số");
+                System.out.println("Chỉ được nhập số nguyên dương");
                 flagOfFloor = false;
             }
-        } while (!flagOfFloor);
+        } while (!flagOfFloor || numberOfFloor < 0);
 
-        System.out.println("Nhập số lần đã sử dụng 0 <= number <= 5");
+
         int count = 0;
         boolean flagOfCount;
         do {
             try {
+                System.out.println("Nhập số lần đã sử dụng 0 <= number <= 5");
                 do {
                     count = Integer.parseInt(scanner.nextLine());
                     if (count > 5 || count < 1) {

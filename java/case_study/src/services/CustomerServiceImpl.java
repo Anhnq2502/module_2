@@ -8,6 +8,9 @@ import utils.Constant;
 import utils.Regex;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -67,10 +70,15 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.println("Tên khách hàng");
         String name = scanner.nextLine();
         String dayOfBirth;
+        int age;
         do {
-            System.out.println("Ngày sinh của khac hàng");
+            System.out.println("Ngày sinh");
+            LocalDate localDate = LocalDate.now();
             dayOfBirth = scanner.nextLine();
-        }while (!regex.checkCodeDay(dayOfBirth));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse(dayOfBirth, formatter);
+            age = Period.between(date,localDate).getYears();
+        } while (!regex.checkCodeDay(dayOfBirth) || age < 18 || age > 100);
         System.out.println("Giới tính của khách hàng");
         String sex = scanner.nextLine();
         System.out.println("Số chứng minh nhân dân của khách hàng");
