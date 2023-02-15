@@ -5,6 +5,7 @@ import models.Customer;
 import models.Person;
 import utils.DataCustomer;
 import utils.Constant;
+import utils.Regex;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ICustomerService {
+    Regex regex = new Regex();
     Scanner scanner = new Scanner(System.in);
     static List<Customer> customerList = new LinkedList<>();
     DataCustomer dataCustomer = new DataCustomer();
@@ -64,8 +66,11 @@ public class CustomerServiceImpl implements ICustomerService {
     public void addNewCustomer() {
         System.out.println("Tên khách hàng");
         String name = scanner.nextLine();
-        System.out.println("Ngày sinh của khac hàng");
-        int dayOfBirth = Integer.parseInt(scanner.nextLine());
+        String dayOfBirth;
+        do {
+            System.out.println("Ngày sinh của khac hàng");
+            dayOfBirth = scanner.nextLine();
+        }while (!regex.checkCodeDay(dayOfBirth));
         System.out.println("Giới tính của khách hàng");
         String sex = scanner.nextLine();
         System.out.println("Số chứng minh nhân dân của khách hàng");
@@ -126,7 +131,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
             }
         } while (!"12345".contains(chooseOfCustomerType));
-        Customer newCustomer = new Customer(name, String.valueOf(dayOfBirth), sex, identityCardNumber, phoneNumber, email, customerCode, customerType);
+        Customer newCustomer = new Customer(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email, customerCode, customerType);
         customerList.add(newCustomer);
         FileWriter fileWriter;
         BufferedWriter bufferedWriter = null;

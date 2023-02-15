@@ -7,13 +7,14 @@ import java.util.Scanner;
 public class BookingController {
     public static void bookingManagement() {
         BookingServiceImpl bookingService = new BookingServiceImpl();
-        System.out.println("Menu\n" +
+
+        do {
+            System.out.println("Menu\n" +
                 "1.Add new booking\n" +
                 "2.Display list booking\n" +
                 "3.Return main menu");
-        Scanner scanner = new Scanner(System.in);
-        String select = scanner.nextLine();
-        do {
+            Scanner scanner = new Scanner(System.in);
+            String select = scanner.nextLine();
             switch (select) {
                 case "1":
                     bookingService.addNewBooking();

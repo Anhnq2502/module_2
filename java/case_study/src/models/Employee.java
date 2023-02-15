@@ -14,6 +14,7 @@ public class Employee extends Person {
         this.wage = wage;
     }
 
+
     public int getEmployeeCode() {
         return employeeCode;
     }

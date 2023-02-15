@@ -23,12 +23,12 @@ public class DataCustomer {
             int customerCode = Integer.parseInt(temp[0]);
             String customerType = temp[1];
             String name = temp[2];
-            int dayOfBirth = Integer.parseInt(temp[3]);
+            String dayOfBirth =(temp[3]);
             String sex = temp[4];
             int identityCardNumber = Integer.parseInt(temp[5]);
             int phoneNumber = Integer.parseInt(temp[6]);
             String email = temp[7];
-            customerList1.add(new Customer(name, String.valueOf(dayOfBirth), sex, identityCardNumber, phoneNumber, email, customerCode, customerType));
+            customerList1.add(new Customer(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email, customerCode, customerType));
 
 
         }

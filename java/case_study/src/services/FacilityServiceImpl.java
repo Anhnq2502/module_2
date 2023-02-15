@@ -1,7 +1,6 @@
 package services;
 
 import controllers.FacilityController;
-import controllers.FuramaController;
 import models.Facility;
 import models.Room;
 import models.Villa;
@@ -290,7 +289,7 @@ public class FacilityServiceImpl implements IFacilityService {
         do {
             try {
                 numberOfFloor = Integer.parseInt(scanner.nextLine());
-                flagOfFloor = true;
+                    flagOfFloor = true;
             } catch (NumberFormatException e) {
                 System.out.println("Chỉ được nhập số");
                 flagOfFloor = false;

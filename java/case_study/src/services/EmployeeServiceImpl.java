@@ -5,6 +5,7 @@ import models.Employee;
 import models.Person;
 import utils.DataEmployee;
 import utils.Constant;
+import utils.Regex;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -14,9 +15,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
+    Regex regex = new Regex();
     DataEmployee dataEmployee = new DataEmployee();
     static List<Employee> employeeList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
+
     @Override
     public void displayListEmployees() {
         List<Employee> employeeList1;
@@ -38,8 +41,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public void addNewEmployee() {
         System.out.println("Tên nhân viên");
         String name = scanner.nextLine();
-        System.out.println("Ngày sinh");
-        int dayOfBirth = Integer.parseInt(scanner.nextLine());
+        String dayOfBirth;
+        do {
+            System.out.println("Ngày sinh");
+            dayOfBirth = scanner.nextLine();
+        } while (!regex.checkCodeDay(dayOfBirth));
         System.out.println("Giới tính");
         String sex = scanner.nextLine();
         System.out.println("Số chứng minh nhân dân");
@@ -63,7 +69,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 }
             }
         } while (!flag);
-        String chooseOfLevel = null;
+        String chooseOfLevel;
         String level = null;
 
         do {
@@ -92,7 +98,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
                     break;
             }
         } while ("12345".equals(chooseOfLevel));
-        String chooseOfWorkingPosition = null;
+        String chooseOfWorkingPosition;
         String workingPosition = null;
         do {
             System.out.println("Vị trí làm việc\n" +
@@ -129,10 +135,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 default:
                     System.out.println("Chỉ chọn từ 1 - 7");
             }
-        } while (!"123456".contains(chooseOfWorkingPosition));
+        } while (!"1234567".contains(chooseOfWorkingPosition));
         System.out.println("Nhập số lương");
         Double wage = Double.parseDouble(scanner.nextLine());
-        Employee employee = new Employee(name, String.valueOf(dayOfBirth), sex, identityCardNumber, phoneNumber, email, employeeCode, level, workingPosition, wage);
+        Employee employee = new Employee(name, dayOfBirth, sex, identityCardNumber, phoneNumber, email, employeeCode, level, workingPosition, wage);
         employeeList.add(employee);
         FileWriter fileWriter;
         BufferedWriter bufferedWriter = null;
@@ -173,6 +179,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public void editEmployee() {
         List<Employee> employeeList1;
