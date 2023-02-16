@@ -104,8 +104,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 case "5":
                     level = scanner.nextLine();
                     break;
+                default:
+                    System.out.println("Chỉ nhập từ 1 - 5");
             }
-        } while ("12345".equals(chooseOfLevel));
+        } while (!"12345".contains(chooseOfLevel));
         String chooseOfWorkingPosition;
         String workingPosition = null;
         do {
@@ -153,7 +155,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         try {
             fileWriter = new FileWriter(Constant.FILE_EMPLOYEE, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(employee.toString() + "\n");
+            bufferedWriter.write(employee + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
@@ -179,8 +181,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 for (int i = 0; i < employeeList1.size(); i++) {
                     if (codeEmployee == employeeList1.get(i).getEmployeeCode()) {
                         employeeList1.remove(i);
+                        dataEmployee.writeEmployee(employeeList1);
+                        return;
                     }
                 }
+                System.out.println("Không có nhân viên nào có mã đó ");
             }
             dataEmployee.writeEmployee(employeeList1);
         } catch (IOException e) {

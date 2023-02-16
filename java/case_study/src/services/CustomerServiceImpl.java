@@ -146,7 +146,7 @@ public class CustomerServiceImpl implements ICustomerService {
         try {
             fileWriter = new FileWriter(Constant.FILE_CUSTOMER, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(newCustomer.toString() + "\n");
+            bufferedWriter.write(newCustomer + "\n");
 
 
         } catch (IOException e) {
